@@ -21,3 +21,14 @@ Requisito do Usuario (1° versão)
 Requisitos Funcionais e Não Funcionais
   - O sistema deverá enviar o relatorio na data e hora agendada pelo usuario. 
   - O usuario poderá testar a conexão no ato da escolha do drive e com usuario e senha do banco de dados.
+
+### Tecnologias para o projeto
+  * Docker
+  * Docker-compose
+  * Mongodb
+  * Nodejs
+  * Express
+  * Oracle
+  * PostgreSQL
+  * MySQL
+  * MSSQL
