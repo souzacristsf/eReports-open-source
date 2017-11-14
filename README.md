@@ -1,7 +1,7 @@
 # Send Email Reports 
 <!-- ![alt text](./img/logo.jpg){: .img-small}  -->
 
-<img src="./img/logo.jpg" alt="Mortality Bubble Chart" height="400">
+<img src="./img/logo.jpg" alt="Mortality Bubble Chart" height="200">
 
 #### Resumo
 O projeto tem como objetivo conectar em qualquer banco de dados para envio de relatórios por e-mail. Através de drive's de conexão no backend. Sendo assim, o usuário poderá nas primeiras versões escolher o drive de conexão e cadastrar um SQL e E-mail para envio do report, possibilitanto o agendamento do mesmo para que seja possivél rodar todos os dias, uma vez no dia, o mês todos e etc.
