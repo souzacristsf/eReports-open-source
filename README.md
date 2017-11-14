@@ -1,6 +1,7 @@
 # Send Email Reports 
-![drawing](https://cdn.instructables.com/FL2/5KAS/I7MXEMQ0/FL25KASI7MXEMQ0.MEDIUM.jpg)
-img[alt=drawing] { width: 50px; }
+<!-- ![alt text](./img/logo.jpg){: .img-small}  -->
+
+<img src="./img/logo.jpg" alt="Mortality Bubble Chart" height="400">
 
 #### Resumo
 O projeto tem como objetivo conectar em qualquer banco de dados para envio de relatórios por e-mail. Através de drive's de conexão no backend. Sendo assim, o usuário poderá nas primeiras versões escolher o drive de conexão e cadastrar um SQL e E-mail para envio do report, possibilitanto o agendamento do mesmo para que seja possivél rodar todos os dias, uma vez no dia, o mês todos e etc.
@@ -20,4 +21,3 @@ Requisito do Usuario (1° versão)
 Requisitos Funcionais e Não Funcionais
   - O sistema deverá enviar o relatorio na data e hora agendada pelo usuario. 
   - O usuario poderá testar a conexão no ato da escolha do drive e com usuario e senha do banco de dados.
-  - 
