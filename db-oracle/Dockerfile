@@ -14,7 +14,7 @@ ADD init.sql /docker-entrypoint-initdb.d/
 
 # RUN sqlplus system/oracle < init.sql
 
-EXPOSE 49160
+# EXPOSE 49160
 
 # RUN chmod +x start.sh
 # CMD ["sh", "start.sh"]
