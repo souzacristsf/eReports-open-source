@@ -1,0 +1,35 @@
+version: "3"
+services:
+    # principal:
+    #     image: hmmkb/aplication
+    #     container_name: appprincipal
+    #     restart: always
+    #     ports:
+    #         - 80:80
+    #         - 443:443
+    # mongodb:
+    #     image: mongo:latest
+    #     container_name: "mongodb"
+    #     environment:
+    #       - MONGO_DATA_DIR=/data/db
+    #       - MONGO_LOG_DIR=/dev/null
+    #     volumes:
+    #       - ~/data/db:/data/db
+    #     ports:
+    #         - 27017:27017
+    #     command: mongod --smallfiles --logpath=/dev/null
+    #     restart: always
+
+    webrelatorio:
+        image: oracle-client
+        container_name: apirelatorio
+        volumes:
+            - ./webrelatorio:/projetos/hmmkb/webrelatorio
+        ports:
+            - 3000:3000
+        # depends_on:
+        #     - mongodb
+        command: bash -c "cd /projetos/hmmkb/webrelatorio && npm i && npm install -g nodemon && npm start"
+        restart: always
+
+  
