@@ -30,3 +30,5 @@ ADD init.sql /docker-entrypoint-initdb.d/
 # sqlplus system/oracle
 # docker run -it -d -p 49160:22 -p 49161:1521 -p 8080:8080 --name db-oracle -e ORACLE_ENABLE_XDB=true database-oracle /bin/sh start.sh
 # docker logs db-oracle
+
+# ssh root@128.1.9.146 -p 49160

@@ -8,7 +8,7 @@ module.exports = {
 
   // For information on connection strings see:
   // https://github.com/oracle/node-oracledb/blob/master/doc/api.md#connectionstrings
-  connectString : process.env.DB_URL_CONNECTION || "128.1.9.146:1522/XE",
+  connectString : process.env.DB_URL_CONNECTION || "128.1.9.146:49161/XE",
 
   stmtCacheSize : 40, 
 
