@@ -35,3 +35,6 @@ ADD init.sql /docker-entrypoint-initdb.d/
 
 
 # docker exec -it db-oracle /bin/bash
+
+
+# sqlplus system/oracle 128.1.9.146:1521/XE
