@@ -6,5 +6,3 @@ echo "=> Começando..."
 sqlplus system/oracle@localhost:1521/XE < init.sql
 
 
-
-
