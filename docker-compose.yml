@@ -5,7 +5,7 @@ services:
         container_name: db-oracle
         restart: always
         ports:
-            - 49160:22
+            - "49160:22"
             - 49161:1521
             - 8080:8080
         environment:
