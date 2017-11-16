@@ -22,7 +22,7 @@ services:
 
     webrelatorio:
         image: oracle-client
-        container_name: apirelatorio
+        container_name: send-reports
         volumes:
             - ./webrelatorio:/projetos/hmmkb/webrelatorio
         ports:
