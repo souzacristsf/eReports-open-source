@@ -38,7 +38,7 @@ ALTER SESSION SET NLS_LANGUAGE='BRAZILIAN PORTUGUESE';
 INSERT INTO product VALUES
     (
       1
-    , 'Calça Jeans'
+    , 'Calca Jeans'
     , 99.99
     );
 INSERT INTO product VALUES
