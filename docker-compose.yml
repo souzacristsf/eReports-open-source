@@ -17,7 +17,7 @@ services:
         volumes:
             - ./webrelatorio:/projetos/hmmkb/webrelatorio
         ports:
-            - 3000:3000
+            - 9000:9000
         command: bash -c "cd /projetos/hmmkb/webrelatorio && npm i && npm install -g nodemon && npm start"
         restart: always
 

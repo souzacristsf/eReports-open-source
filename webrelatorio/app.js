@@ -30,7 +30,7 @@ app.use('/public', express.static(path.join(__dirname, './public'))); //adicione
 
 // console.log('app.jwt:', app.jwt)
 
-app.set('port', (process.env.PORT || 3000))
+app.set('port', (process.env.PORT || 9000))
 
 const teste_conection = require('./teste_conection')(connect);
 
