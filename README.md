@@ -67,3 +67,12 @@ Com o comando ```docker ps```` para vericifar os container's.
 | 6d68d597a493   | database-oracle  |     "/bin/sh -c '/usr/..."   3 minutes ago       Up 3 minutes        22/tcp, 0.0.0.0:1522->1521/tcp, 0.0.0.0:8081->8080/tcp   db-oracle
 
 
+
+
+
+
+para entrar no serviço de banco de dados do container **db-oracle**, segue o comando.
+```
+docker exec -it db-oracle /bin/bash
+```
+

@@ -32,3 +32,6 @@ ADD init.sql /docker-entrypoint-initdb.d/
 # docker logs db-oracle
 
 # ssh root@128.1.9.146 -p 49160
+
+
+# docker exec -it db-oracle /bin/bash
