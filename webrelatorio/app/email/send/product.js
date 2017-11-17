@@ -26,13 +26,13 @@ module.exports = (Organism) => {
             ciphers:'SSLv3'
         },
 		auth: {
-			user: config.email,
+			user: config.user,
 			pass: config.pass
 		}
 	})
 	transporte.sendMail({
 		from: config.remetente,
-		to: config.email,
+		to: config.user,
 		subject: config.assunto,
 		html: html
 	}, (err)=>{
