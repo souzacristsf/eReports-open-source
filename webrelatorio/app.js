@@ -13,7 +13,7 @@ const app = express()
 
 app.set('superSecret', '1a5H(qzO&1+!8M35tXvai3A*JF%Os]eOoG63/Oo+:1S(R[%x[js09UKDam0#85')
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(validator())

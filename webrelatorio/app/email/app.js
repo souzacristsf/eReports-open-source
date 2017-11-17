@@ -6,6 +6,7 @@ const products = require('./sql/product');
 
 module.exports = (Connection) => {
 
+console.log('Connection: ', Connection)
 var myoffset = 0; // number of rows to skip
 var mymaxnumrows = 1000; // number of rows to fetch
 
