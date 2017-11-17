@@ -37,12 +37,12 @@ Requisitos Funcionais e Não Funcionais
 
 ## Execução do Projeto
 >
-Para a execução e teste desse projeto estou assumindo que você ja tenha um convívio de *AMOR* e conhecimento sobre a estrutura **Docker**.
+Para a execução e teste desse projeto estou assumindo que você ja tenha conhecimento e um convívio de *AMOR* :heart: sobre a estrutura **Docker**.
 Não conhece nada sobre Docker ? [clique aqui](https://docs.docker.com/get-started/), tente fazer o `Get Started` na pagina do docker depois continue a execução do projeto.
 
 ### Criando as imagens Docker 
 Executar os comandos abaixo para o funcionamento do projeto.   
-obs: ```rodar o comando dentro do diretorio.```
+>Atenção: ```rodar o comando dentro de cada diretorio.```
   - [Criação da Imagem Oracle do Banco de dados](./db-oracle/README.md)
   - [Criação da Imagem Client Oracle do Banco de dados](./oracle-client/README.md)
 
@@ -91,3 +91,6 @@ Para entrar no serviço da API, segue o comando.
 ```
 docker exec -it send-reports /bin/bash
 ```
+
+
+
