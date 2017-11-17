@@ -11,7 +11,7 @@ module.exports = (Organism) => {
 
 	const config = {
 		remetente: 'Send Reports Email <michel.souza@hospitalmarieta.org.br>',
-		assunto: 'Report - Products'
+		assunto: 'Indicadores de Produtos'
 	}
 	
 	const html = template(Organism);

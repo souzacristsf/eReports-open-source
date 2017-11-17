@@ -69,7 +69,7 @@ th {
 <body>
 
 <div class="jumbotron">
-    <h3 class="text-center">Indicador - Produtos</h1>
+    <h3 class="text-center">Indicador de Produto em Estoque</h1>
     <h4 class="titulo" >Segue relatorio indicador de Gestão.</h3>
     <p style="font-size: 10px;" ><strong>Envio realizado automaticamente pelo nosso sistema.</strong></p>
 </div>
