@@ -37,7 +37,7 @@ Requisitos Funcionais e Não Funcionais
 
 ## Execução do Projeto
 >
-Para a execução e teste desse projeto estou assumindo que você ja tenha conhecimento e um convívio de *AMOR* :heart: sobre a estrutura **Docker**.
+Para a execução e teste desse projeto estou assumindo que você ja tenha conhecimento e um convívio de *AMOR* sobre a estrutura **Docker** :heart: .
 Não conhece nada sobre Docker ? [clique aqui](https://docs.docker.com/get-started/), tente fazer o `Get Started` na pagina do docker depois continue a execução do projeto.
 
 ### Criando as imagens Docker 
@@ -92,5 +92,6 @@ Para entrar no serviço da API, segue o comando.
 docker exec -it send-reports /bin/bash
 ```
 
-
+# Parabêns :clap: :clap: :clap: :clap: :clap: 
+Se você chegou até aqui, serviços rodando com sucesso. 
 
