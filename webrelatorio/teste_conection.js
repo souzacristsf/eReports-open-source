@@ -9,7 +9,7 @@ module.exports = (Connection) =>
 var query = (err, connection) => {
     if (err) { console.error('estourou aqui: ', err); return; }
 
-    var sql = `select * from product`; 
+    var sql = `select * from sys.product`; 
 
       connection.execute(
       sql,
