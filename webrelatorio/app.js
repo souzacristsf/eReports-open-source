@@ -48,7 +48,7 @@ app.use(function (req, res, next) {
   next()
 })
 
-consign({cwd: 'app', verbose: false})
+consign({cwd: 'app', verbose: true})
   // .include('config')
   // .include('middleware')
   // .include('models')
