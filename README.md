@@ -66,8 +66,9 @@ Execute o comando abaixo:
 ```
 docker-compose up -d
 ```
-Neste momento criamos os serviços da API e Banco de dados em container. 
-Com o comando ```docker ps```` para vericifar os container's.
+
+Neste momento criamos os serviços da API e Banco de dados em container e estão rodando em **background**
+Com o comando ```docker ps``` para vericifar os container's. Para verificar os *logs* do build e requisição nos testes da API já adianto esse comando ```docker-compose logs```.
 
 `output` 
 

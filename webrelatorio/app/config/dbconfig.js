@@ -1,5 +1,5 @@
 module.exports = {
-  user          : process.env.DB_USER || "sys",
+  user          : process.env.DB_USER || "sysdba",
 
   // Instead of hard coding the password, consider prompting for it,
   // passing it in an environment variable via process.env, or using
