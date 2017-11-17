@@ -30,9 +30,19 @@ module.exports = (Organism) => {
 			pass: config.pass
 		}
 	})
+
+	//send Gmail
+	// const transporter = nodemailer.createTransport({
+	// service: 'gmail',
+	// auth: {
+	// 		user: config.user,
+	// 		pass: config.pass
+	// 	}
+	// });
+
 	transporte.sendMail({
 		from: config.remetente,
-		to: config.user,
+		to: config.to,
 		subject: config.assunto,
 		html: html
 	}, (err)=>{
