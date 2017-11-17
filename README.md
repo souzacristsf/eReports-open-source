@@ -93,5 +93,5 @@ docker exec -it send-reports /bin/bash
 ```
 
 # Parabêns :clap: :clap: :clap: :clap: :clap: 
-Se você chegou até aqui, serviços rodando com sucesso. 
+Se você chegou até aqui, os serviços estão rodando com sucesso. :heart_eyes:
 
