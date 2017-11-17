@@ -3,7 +3,7 @@ module.exports = {
 
   pass      : '<123456>', ////inserir a senha do email seu usuario aqui
 
-  remetente: 'Send Reports Email <souza_crists@hotmail.com>',
+  remetente: 'Send Reports Email <testopensource@hotmail.com>',
 
   assunto: 'Indicadores de Produtos'
 
