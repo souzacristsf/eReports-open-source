@@ -48,7 +48,7 @@ docker images
 `output` 
 
 | REPOSITORY               | TAG         |  IMAGE ID     | CREATED             | SIZE     |
-| :----------------------: | :---------: | :-----------: | :-----------------: | ------:  |
+| :----------------------  | :---------: | :-----------: | :-----------------: | :------: |
 | database-oracle          | latest      | b0bf2efb4951  | About an hour ago   | 2.23GB   |
 | oracle-client            | latest      | 89182a9eac87  | 3 weeks ago         | 936MB    |
 | wnameless/oracle-xe-11g  | latest      | f794779ccdb9  | 5 weeks ago         | 2.23GB   |
@@ -65,10 +65,10 @@ Com o comando ```docker ps```` para vericifar os container's.
 
 `output` 
 
-| CONTAINER ID   | IMAGE            |   COMMAND                  CREATED             STATUS              PORTS                                                    NAMES
-| :------------: | :--------------: |
-| ea46f279a07c   | oracle-client    |    "bash -c 'cd /proj..."   3 minutes ago       Up 3 minutes        0.0.0.0:9000->9000/tcp                                   send-reports
-| 6d68d597a493   | database-oracle  |     "/bin/sh -c '/usr/..."   3 minutes ago       Up 3 minutes        22/tcp, 0.0.0.0:1522->1521/tcp, 0.0.0.0:8081->8080/tcp   db-oracle
+| CONTAINER ID   | IMAGE            | COMMAND                 | CREATED        | STATUS         | PORTS                                                   | NAMES         |
+| :------------: | :--------------: | :---------------------: | :------------: | :------------: | :-----------------------------------------------------  | :-----------: |
+| ea46f279a07c   | oracle-client    | "bash -c 'cd /proj..."  | 3 minutes ago  | Up 3 minutes   | 0.0.0.0:9000->9000/tcp                                  | send-reports  |
+| 6d68d597a493   | database-oracle  | "/bin/sh -c '/usr/..."  | 3 minutes ago  | Up 3 minutes   | 22/tcp, 0.0.0.0:1522->1521/tcp, 0.0.0.0:8081->8080/tcp  | db-oracle     |
 
 
 
