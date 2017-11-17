@@ -39,7 +39,7 @@ Requisitos Funcionais e Não Funcionais
 >>>
 Para a execução e teste desse projeto estou assumindo que você ja tenha um convívio de *AMOR* e conhecimento sobre a estrutura **Docker**.
 Não conhece nada sobre Docker ? [clique aqui](https://docs.docker.com/get-started/), tente fazer o `Get Started` na pagina do docker depois continue a execução do projeto.
-<<<
+
 ### Criando as imagens Docker 
 Executar os comandos abaixo para o funcionamento do projeto.   
 obs: ```rodar o comando dentro do diretorio.```
@@ -84,9 +84,10 @@ Depois de ter executado todos os passos acima, para entrar no serviço de banco 
 ```
 docker exec -it db-oracle /bin/bash
 ```
+
 >>>
 Ainda dentro do serviço de banco de dados do container db-oracle. com o comando ```lsnrctl status``` você pode checar o status `Listener` do seu database server.
-<<<
+
 Para entrar no serviço da API, segue o comando.
 ```
 docker exec -it send-reports /bin/bash
