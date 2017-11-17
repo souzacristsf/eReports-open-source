@@ -60,7 +60,9 @@ docker-compose up -d
 ```
 Neste momento criamos os serviços da API e Banco de dados em container. 
 Com o comando ```docker ps```` para vericifar os container's.
+
 `output` 
+
 | CONTAINER ID   | IMAGE            |   COMMAND                  CREATED             STATUS              PORTS                                                    NAMES
 | :------------: | :--------------: |
 | ea46f279a07c   | oracle-client    |    "bash -c 'cd /proj..."   3 minutes ago       Up 3 minutes        0.0.0.0:9000->9000/tcp                                   send-reports
