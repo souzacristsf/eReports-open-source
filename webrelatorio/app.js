@@ -56,9 +56,9 @@ consign({cwd: 'app', verbose: true})
   // .include('validates')
   // .include('controllers')
   // .include('relacional')
-  .include('email')
   // .include('validates')
   .include('routes')
+  .include('email')
   .into(app)
 
 // 404
