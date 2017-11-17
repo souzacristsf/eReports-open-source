@@ -9,7 +9,6 @@ const validator = require('express-validator')
 const consign = require('consign')
 const schedule = require('node-schedule')
 
-
 const app = express()
 
 app.set('superSecret', '1a5H(qzO&1+!8M35tXvai3A*JF%Os]eOoG63/Oo+:1S(R[%x[js09UKDam0#85')
@@ -36,6 +35,8 @@ const teste_conection = require('./teste_conection')(connect);
 
 app.get('/api/relatorio/teste_conection', teste_conection);
 
+require('./app/email/app')(connect);
+
 const port = app.get('port')
 
 const server = http.createServer(app)
@@ -54,10 +55,10 @@ consign({cwd: 'app', verbose: false})
   // .include('helps')
   // .include('validates')
   // .include('controllers')
-  // // .include('relacional')
-  // // .include('atuali2zacao')
-  // // .include('validates')
-  // .include('routes')
+  // .include('relacional')
+  .include('email')
+  // .include('validates')
+  .include('routes')
   .into(app)
 
 // 404

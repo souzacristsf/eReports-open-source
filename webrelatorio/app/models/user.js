@@ -24,7 +24,7 @@ module.exports = app =>{
 			updated_at: {type: Date},
 			deleted_at: {type: Date}
 		},
-		rule: {type : String, enum : [ 'Usuario Smart', 'Usuario Master', 'Administrador' ], default : 'Usuario Smart'},
+		rule: {type : String, enum : [ 'Usuario', 'Master', 'Administrador' ], default : 'Usuario'},
 		isAdmin: {type: Boolean, default: false},
 		email:  {type: String, required: true},
 		last_acess: {type: Date, default: Date.now},
