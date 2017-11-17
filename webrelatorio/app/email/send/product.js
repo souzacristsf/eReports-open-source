@@ -47,7 +47,7 @@ module.exports = (Organism) => {
 		html: html
 	}, (err)=>{
 		if (err) throw err;
-		console.log('E-mail para %s enviado!', config.user);
+		console.log('E-mail para %s enviado!', config.to);
 
 	})
 
