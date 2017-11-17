@@ -1,4 +1,4 @@
-# Send Email Reports 
+# Send Reports Email
 <!-- ![alt text](./img/logo.jpg){: .img-small}  -->
 
 <img src="./img/logo.jpg" alt="Mortality Bubble Chart" height="200">
@@ -25,6 +25,7 @@ Requisitos Funcionais e Não Funcionais
 ### Tecnologias para o projeto
   * Docker
   * Docker-compose
+  * Redis
   * Mongodb
   * Nodejs
   * Express
@@ -35,9 +36,10 @@ Requisitos Funcionais e Não Funcionais
 
 
 ## Execução do Projeto
-### Para a execução e teste desse projeto estou assumindo que você ja tem um convívio de *AMOR* e conhecimento sobre a estrutura **Docker**.
+>>>
+Para a execução e teste desse projeto estou assumindo que você ja tenha um convívio de *AMOR* e conhecimento sobre a estrutura **Docker**.
 Não conhece nada sobre Docker ? [clique aqui](https://docs.docker.com/get-started/), tente fazer o `Get Started` na pagina do docker depois continue a execução do projeto.
-
+<<<
 ### Criando as imagens Docker 
 Executar os comandos abaixo para o funcionamento do projeto.   
 obs: ```rodar o comando dentro do diretorio.```
@@ -75,12 +77,17 @@ Com o comando ```docker ps```` para vericifar os container's.
 | 6d68d597a493   | database-oracle  | "/bin/sh -c '/usr/..."  | 3 minutes ago  | Up 3 minutes   | 22/tcp, 0.0.0.0:1522->1521/tcp, 0.0.0.0:8081->8080/tcp  | db-oracle     |
 
 
+### Container
+Comandos para interação com os container em execução.
 
-# PAREI AQUI DEU BUG...
-
-
-para entrar no serviço de banco de dados do container **db-oracle**, segue o comando.
+Depois de ter executado todos os passos acima, para entrar no serviço de banco de dados do container **db-oracle**, segue o comando.
 ```
 docker exec -it db-oracle /bin/bash
 ```
-
+>>>
+Ainda dentro do serviço de banco de dados do container db-oracle. com o comando ```lsnrctl status``` você pode checar o status `Listener` do seu database server.
+<<<
+Para entrar no serviço da API, segue o comando.
+```
+docker exec -it send-reports /bin/bash
+```
