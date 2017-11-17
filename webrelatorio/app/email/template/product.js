@@ -60,7 +60,7 @@ tr:nth-child(even) {
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: #994d33;
     color: white;
 }
 
@@ -76,9 +76,9 @@ th {
 <div class="container">
     <h4><strong>Produtos Cadastrados no Sistema</strong></h4>
     <p style="font-size: 12px;" >Produto Casdatro por valor.</p>
-        <table class="table table-striped" style="background-color: #4CAF50;">
+        <table class="table table-striped" style="background-color: #994d33;">
         <thead>
-            <tr style="background-color: #4CAF50; text-align:center;">
+            <tr style="background-color: #994d33; text-align:center;">
                 <th>Codigo</th>
                 <th>Nome</th>
                 <th>Valor</th>
