@@ -1,21 +1,23 @@
 module.exports = (Organism) => {
 
-    const data = {
-		email: 'souza_crists@hotmail.com'
-};
+    // const data = {
+	// 	email: ''
+	// };
 
     // console.log('Organism:', Organism)
 
 	const nodemailer = require('nodemailer')	
 	const template = require('../template/product')
+	const config = require('../config/user')
 
-	const config = {
-		remetente: 'Send Reports Email <souza_crists@hotmail.com>',
-		assunto: 'Indicadores de Produtos'
-	}
+	// const config = {
+	// 	remetente: 'Send Reports Email <@hotmail.com>',
+	// 	assunto: 'Indicadores de Produtos'
+	// }
 	
 	const html = template(Organism);
 	
+	//send outlook e Hotmail
 	const transporte = nodemailer.createTransport({
 		host: "smtp.office365.com", // hostname
         secureConnection: false, // TLS requires secureConnection to be false
@@ -24,13 +26,13 @@ module.exports = (Organism) => {
             ciphers:'SSLv3'
         },
 		auth: {
-			user: 'souza_crists@hotmail.com',
-			pass: '<891866>'
+			user: config.email,
+			pass: config.pass
 		}
 	})
 	transporte.sendMail({
 		from: config.remetente,
-		to: data.email,
+		to: config.email,
 		subject: config.assunto,
 		html: html
 	}, (err)=>{
