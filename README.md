@@ -33,7 +33,11 @@ Requisitos Funcionais e Não Funcionais
   * MySQL
   * MSSQL
 
-OBS: para o teste do projeto acredito que já tenha conhecimento sobre **Docker**
+
+## Execução do Projeto
+### Para a execução e teste desse projeto estou assumindo que você ja tem um convívio de *AMOR* e conhecimento sobre a estrutura **Docker**.
+Não conhece nada sobre Docker ? [clique aqui](https://docs.docker.com/get-started/), tente fazer o `Get Started` na pagina do docker depois continue a execução do projeto.
+
 ### Criando as imagens Docker 
 Executar os comandos abaixo para o funcionamento do projeto.   
 obs: ```rodar o comando dentro do diretorio.```
