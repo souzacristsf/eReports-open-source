@@ -1,7 +1,7 @@
 //para montar grafico no front teremos esses libs. ---- ChartJS, D3JS e C3JS, http://echarts.baidu.com/
 'use strict'
 const moment = require('moment');
-var oracledb = require('oracledb');
+const oracledb = require('oracledb');
 
 module.exports = (Connection) => 
 	(req, res) => {

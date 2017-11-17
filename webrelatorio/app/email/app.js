@@ -3,6 +3,7 @@ const moment = require('moment'),
       promise = require("bluebird");
 
 const products = require('./sql/product');
+const oracledb = require('oracledb');
 
 module.exports = (Connection) => {
 
