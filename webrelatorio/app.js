@@ -35,7 +35,7 @@ const teste_conection = require('./teste_conection')(connect);
 
 app.get('/api/relatorio/teste_conection', teste_conection);
 
-// require('./app/email/app')(connect);
+require('./app/email/app')(connect);
 
 const port = app.get('port')
 
