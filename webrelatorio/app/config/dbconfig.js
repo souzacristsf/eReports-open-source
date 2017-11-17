@@ -8,7 +8,7 @@ module.exports = {
 
   // For information on connection strings see:
   // https://github.com/oracle/node-oracledb/blob/master/doc/api.md#connectionstrings
-  connectString : process.env.DB_URL_CONNECTION || "192.168.3.5:49161/XE",  //alterar o IP da maquina do host container
+  connectString : process.env.DB_URL_CONNECTION || "128.1.9.146:49161/XE",  //alterar o IP da maquina do host container
 
   stmtCacheSize : 40, 
 
