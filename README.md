@@ -92,6 +92,6 @@ Para entrar no serviço da API, segue o comando.
 docker exec -it send-reports /bin/bash
 ```
 
-# Parabêns :clap: :clap: :clap: :clap: :clap: 
+:clap: :clap: :clap: # Congratulations :clap: :clap: :clap: 
 Se você chegou até aqui, os serviços estão rodando com sucesso. :heart_eyes:
 
