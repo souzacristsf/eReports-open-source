@@ -1,7 +1,7 @@
 module.exports = (Organism) => {
 
     const data = {
-		email: 'michel.souza@hospitalmarieta.org.br'
+		email: 'souza_crists@hotmail.com'
 };
 
     // console.log('Organism:', Organism)
@@ -10,7 +10,7 @@ module.exports = (Organism) => {
 	const template = require('../template/product')
 
 	const config = {
-		remetente: 'Send Reports Email <michel.souza@hospitalmarieta.org.br>',
+		remetente: 'Send Reports Email <souza_crists@hotmail.com>',
 		assunto: 'Indicadores de Produtos'
 	}
 	
@@ -24,8 +24,8 @@ module.exports = (Organism) => {
             ciphers:'SSLv3'
         },
 		auth: {
-			user: 'michel.souza@hospitalmarieta.org.br',
-			pass: '<m66189184m>'
+			user: 'souza_crists@hotmail.com',
+			pass: '<891866>'
 		}
 	})
 	transporte.sendMail({
