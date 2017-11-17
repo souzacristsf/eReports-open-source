@@ -1,7 +1,7 @@
 version: "3"
 services:
     database-oracle:
-        image: database-oracle
+        build: ./db-oracle
         container_name: db-oracle
         restart: always
         ports:
@@ -9,10 +9,11 @@ services:
             - 49161:1521
             - 8080:8080
         environment:
-          - ORACLE_ENABLE_XDB=true
+            - ORACLE_ENABLE_XDB=true
+            - ORACLE_ALLOW_REMOTE=true
 
     send-reports:
-        image: oracle-client
+        build: ./oracle-client
         container_name: send-reports
         volumes:
             - ./webrelatorio:/projetos/hmmkb/webrelatorio
