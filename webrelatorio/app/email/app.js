@@ -30,7 +30,7 @@ var query = (err, connection) => {
           }
       );
 
-    promise.join(session, query  ).spread(function (s, result){
+    promise.join(session, query  ).spread(function (sessions, result){
         const index = { 
           title: 'Send Reports Email', 
           products: result.rows, 
@@ -48,4 +48,5 @@ var query = (err, connection) => {
 };
 
 Connection(query);
+
 }
