@@ -1,7 +1,7 @@
-'use strict'
-const dbConfig = require('../app/config/dbconfig');
 const oracledb = require('oracledb');
+const dbConfig = require('../app/config/dbconfig');
 
+'use strict'
 module.exports = (cb) => {
   oracledb.getConnection( dbConfig, cb );
 }
