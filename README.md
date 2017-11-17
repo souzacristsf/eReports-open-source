@@ -46,7 +46,7 @@ docker images
 ```
 `output` 
 | REPOSITORY               | TAG         |  IMAGE ID     | CREATED             | SIZE     |
-| :----------------------: | :---------: | :-----------: | :-----------------: | :------: |
+| :----------------------: | :---------: | :-----------: | :-----------------: | ------:  |
 | database-oracle          | latest      | b0bf2efb4951  | About an hour ago   | 2.23GB   |
 | oracle-client            | latest      | 89182a9eac87  | 3 weeks ago         | 936MB    |
 | wnameless/oracle-xe-11g  | latest      | f794779ccdb9  | 5 weeks ago         | 2.23GB   |
@@ -68,7 +68,7 @@ Com o comando ```docker ps```` para vericifar os container's.
 
 
 
-
+# PAREI AQUI DEU BUG...
 
 
 para entrar no serviço de banco de dados do container **db-oracle**, segue o comando.
