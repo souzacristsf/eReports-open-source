@@ -44,7 +44,9 @@ Para visulizar as imagens criadas execute o comando:
 ```
 docker images
 ```
+
 `output` 
+
 | REPOSITORY               | TAG         |  IMAGE ID     | CREATED             | SIZE     |
 | :----------------------: | :---------: | :-----------: | :-----------------: | ------:  |
 | database-oracle          | latest      | b0bf2efb4951  | About an hour ago   | 2.23GB   |
