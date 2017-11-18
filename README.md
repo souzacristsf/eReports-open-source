@@ -5,6 +5,15 @@
 #### Resumo
 O projeto tem como objetivo conectar em qualquer banco de dados para envio de relatórios por e-mail. Através de drive's de conexão no backend. Sendo assim, o usuário poderá nas primeiras versões escolher o drive de conexão e cadastrar um SQL e E-mail para envio do report, possibilitanto o agendamento do mesmo para que seja possivél rodar todos os dias ou uma vez no dia. Integração com telegram para que seja acessivel uma visulização do relatorio por em tempo real ou atualização do mesmo, depois de criado pela interface web.
 
+## Sucesso
+Depois de executado a instalação e o teste, esse será o resultado final.
+
+#### Outlook Web
+<img src="./img/send.png" alt="Mortality Bubble Chart" height="400">
+
+#### Outlook Mobile
+<img src="./img/send-mobile.jpg" alt="Mortality Bubble Chart" height="400">
+
 ### Tecnologias para o projeto
   * Docker
   * Docker-compose
@@ -20,15 +29,8 @@ O projeto tem como objetivo conectar em qualquer banco de dados para envio de re
 ## Integração
   * Telegram
 
-## Sucesso
-Depois de executado a instalação e o teste, esse será o resultado final.
-
-#### Outlook Web
-<img src="./img/send.png" alt="Mortality Bubble Chart" height="400">
-
-#### Outlook Mobile
-<img src="./img/send-mobile.jpg" alt="Mortality Bubble Chart" height="400">
-
+## Atenção
+Projeto ainda em desenvolvimento e refatoração.
 
 ## Instalação e Teste
 Pré-requisitos:
