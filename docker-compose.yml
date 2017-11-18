@@ -1,7 +1,21 @@
 version: "3"
 services:
+    send-reports:
+        build: ./oracle-client
+        image: oracle-client
+        container_name: send-reports
+        volumes:
+            - ./send-report:/send-report
+        depends_on:
+            - database-oracle
+        ports:
+            - 9000:9000
+        command: bash -c "sleep 90; cd /send-report && npm i && npm install -g nodemon && npm start"
+        restart: always
+        
     database-oracle:
         build: ./db-oracle
+        image: database-oracle
         container_name: db-oracle
         restart: always
         ports:
@@ -12,14 +26,5 @@ services:
             - ORACLE_ENABLE_XDB=true
             - ORACLE_ALLOW_REMOTE=true
 
-    send-reports:
-        build: ./oracle-client
-        container_name: send-reports
-        volumes:
-            - ./webrelatorio:/projetos/hmmkb/webrelatorio
-        ports:
-            - 9000:9000
-        command: bash -c "cd /projetos/hmmkb/webrelatorio && npm i && npm install -g nodemon && npm start"
-        restart: always
 
   

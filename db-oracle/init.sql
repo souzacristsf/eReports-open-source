@@ -1,6 +1,6 @@
--- drop table product;
--- drop table employee;
--- drop table purchase;
+-- DROP TABLE product;
+-- DROP TABLE employee;
+-- DROP TABLE purchase;
 CREATE TABLE product
    ( 
         product_id NUMBER CONSTRAINT product_id_nn NOT NULL 
@@ -217,3 +217,6 @@ INSERT INTO purchase VALUES
     );
 
 COMMIT;
+
+
+
