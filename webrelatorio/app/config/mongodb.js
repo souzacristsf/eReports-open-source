@@ -5,7 +5,7 @@ mongoose.Promise = require('bluebird')
 
 const online = false
 //mongodb://cspizza-teste:pizza17-*@ds145659.mlab.com:45659/cspizza
-const url = online ? '' : 'mongodb://128.1.9.146:27017/dashboard';
+const url = online ? '' : 'mongodb://192.168.0.115:27017/dashboard';
 
 // const options = { 
 //   //useMongoClient: true,

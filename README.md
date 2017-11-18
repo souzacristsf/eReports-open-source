@@ -4,7 +4,7 @@
 <img src="./img/logo.jpg" alt="Mortality Bubble Chart" height="200">
 
 #### Resumo
-O projeto tem como objetivo conectar em qualquer banco de dados para envio de relatórios por e-mail. Através de drive's de conexão no backend. Sendo assim, o usuário poderá nas primeiras versões escolher o drive de conexão e cadastrar um SQL e E-mail para envio do report, possibilitanto o agendamento do mesmo para que seja possivél rodar todos os dias, uma vez no dia, o mês todos e etc.
+O projeto tem como objetivo conectar em qualquer banco de dados para envio de relatórios por e-mail. Através de drive's de conexão no backend. Sendo assim, o usuário poderá nas primeiras versões escolher o drive de conexão e cadastrar um SQL e E-mail para envio do report, possibilitanto o agendamento do mesmo para que seja possivél rodar todos os dias ou uma vez no dia. Integração com telegram para que seja acessivel uma visulização do relatorio por em tempo real ou atualização do mesmo, depois de criado pela interface web.
 
 Requisito do Sistema (1° versão)
   - Disponibilizar um cadastro inicial para o usuario.
@@ -34,6 +34,8 @@ Requisitos Funcionais e Não Funcionais
   * MySQL
   * MSSQL
 
+## Integração
+  * Telegram
 
 ## Execução do Projeto
 >

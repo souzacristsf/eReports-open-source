@@ -1,6 +1,6 @@
 FROM node:8
 
-MAINTAINER Michel Souza <souza_crists@hotmail.com>
+LABEL maintainer="Michel Ferreira Souza <souza_crists@hotmail.com>"
 
 COPY files/client/ /tmp
 COPY files/oracle-instantclient.conf /etc/ld.so.conf.d/
