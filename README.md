@@ -24,10 +24,10 @@ O projeto tem como objetivo conectar em qualquer banco de dados para envio de re
 Depois de executado a instalação e o teste, esse será o resultado final.
 
 #### Outlook Web
-<img src="./img/send.png" alt="Mortality Bubble Chart" height="200">
+<img src="./img/send.png" alt="Mortality Bubble Chart" height="400">
 
 #### Outlook Mobile
-<img src="./img/send-mobile.jpg" alt="Mortality Bubble Chart" height="200">
+<img src="./img/send-mobile.jpg" alt="Mortality Bubble Chart" height="400">
 
 
 ## Instalação e Teste
