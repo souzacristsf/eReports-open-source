@@ -1,9 +1,9 @@
 ## Instalação e teste do projeto
 
 #### Observação 
-1° - Altere o IP da sua maquina local ou a maquina que vai rodar o projeto [aqui](./send-report/app/config/dbconfig.js), na variavel `connectString`. Obs: não apague a porta **49161**.
+1° - Altere o IP da sua maquina local ou a maquina que vai rodar o projeto [aqui](./eReports/app/config/dbconfig.js), na variavel `connectString`. Obs: não apague a porta **49161**.
 
-2° - Altere o email do usuario remetente e senha e o destino do email [aqui](./send-report/app/email/config/user.js ). Caso não tenha email. :blush: 
+2° - Altere o email do usuario remetente e senha e o destino do email [aqui](./eReports/app/email/config/user.js ). Caso não tenha email. :blush: 
 Deixei um email de teste para execução. 
 
 Feito tudo isso, `next` com o processo de instalação e teste.
@@ -47,7 +47,7 @@ Com o comando ```docker ps``` para vericifar os container's. Para verificar os *
 
 | CONTAINER ID   | IMAGE            | COMMAND                 | CREATED        | STATUS         | PORTS                                                   | NAMES         |
 | :------------: | :--------------: | :---------------------: | :------------: | :------------: | :-----------------------------------------------------  | :-----------: |
-| ea46f279a07c   | oracle-client    | "bash -c 'cd /proj..."  | 3 minutes ago  | Up 3 minutes   | 0.0.0.0:9000->9000/tcp                                  | send-reports  |
+| ea46f279a07c   | oracle-client    | "bash -c 'cd /proj..."  | 3 minutes ago  | Up 3 minutes   | 0.0.0.0:9000->9000/tcp                                  | eReports  |
 | 6d68d597a493   | database-oracle  | "/bin/sh -c '/usr/..."  | 3 minutes ago  | Up 3 minutes   | 22/tcp, 0.0.0.0:1522->1521/tcp, 0.0.0.0:8081->8080/tcp  | db-oracle     |
 
 #### Observações
@@ -66,7 +66,17 @@ Ainda dentro do serviço de banco de dados do container db-oracle. com o comando
 
 Para entrar no serviço da API, segue o comando.
 ```
-docker exec -it send-reports /bin/bash
+docker exec -it eReports /bin/bash
+```
+
+Para parar o serviço, execute: 
+```
+docker-compose stop
+```
+
+Para retornar o serviço, execute:
+```
+docker-compose start
 ```
 
 # Congratulations :clap: :clap: :clap: 
@@ -74,4 +84,4 @@ Se você chegou até aqui, os serviços estão rodando com sucesso. :heart_eyes:
 
 
 ## Help
-Problemas ou perguntas podem ser aberto issue [aqui](https://github.com/souzacristsf/send-reports-email/issues)
+Problemas ou perguntas podem ser aberto issue [aqui](https://github.com/souzacristsf/eReports-open-source/issues)

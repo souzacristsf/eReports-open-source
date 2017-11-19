@@ -1,4 +1,4 @@
-# Send Reports Email
+#  eReports Open Source
 
 <img src="./img/logo.jpg" alt="Mortality Bubble Chart" height="200">
 
@@ -39,8 +39,12 @@ Pré-requisitos:
 
 Consulte a [instalação](./INSTALL.md) para obter detalhes.  
 
+## Proxima implementação
+  * Criação do frontend para agendamento dos envios e criação dos relatorios.
+  * Estruturação do banco de dados para armazenamento dos script's SQL utilizando MongoDB.
+
 ## Help
-Problemas ou perguntas podem ser aberto issue [aqui](https://github.com/souzacristsf/send-reports-email/issues)
+Problemas ou perguntas podem ser aberto issue [aqui](https://github.com/souzacristsf/eReports-open-source/issues)
 
 ## Contribuindo 
 Gostaria de fazer parte desse projeto? :heart_eyes: 

@@ -1,4 +1,4 @@
-# Send Reports Email
+# eReports Open Source
 
 Requisito do Sistema (1° versão)
   - Disponibilizar um cadastro inicial para o usuario.

@@ -1,16 +1,16 @@
 version: "3"
 services:
-    send-reports:
+    eReports:
         build: ./oracle-client
         image: oracle-client
-        container_name: send-reports
+        container_name: eReports
         volumes:
-            - ./send-report:/send-report
+            - ./eReports:/eReports
         depends_on:
             - database-oracle
         ports:
             - 9000:9000
-        command: bash -c "sleep 90; cd /send-report && npm i && npm install -g nodemon && npm start"
+        command: bash -c "sleep 90; cd /eReports && npm i && npm install -g nodemon && npm start"
         restart: always
         
     database-oracle:
