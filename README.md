@@ -15,13 +15,13 @@ Depois de executado a instalação e o teste, esse será o resultado final.
 <img src="./img/send-mobile.jpg" alt="Mortality Bubble Chart" height="400">
 
 ### Tecnologias para o projeto
-  * [x] Docker
-  * [x] Docker-compose
-  * [ ] Redis
-  * [x] Mongodb
-  * [x] Nodejs
-  * [x] Express
-  * [x] Oracle
+  * [x] Docker :ballot_box_with_check:
+  * [x] Docker-compose :ballot_box_with_check:
+  * [ ] Redis 
+  * [x] Mongodb :ballot_box_with_check:
+  * [x] Nodejs :ballot_box_with_check:
+  * [x] Express :ballot_box_with_check:
+  * [x] Oracle :ballot_box_with_check:
   * [ ] PostgreSQL
   * [ ] MySQL
   * [ ] MSSQL
