@@ -17,17 +17,18 @@ Depois de executado a instalação e o teste, esse será o resultado final.
 ### Tecnologias para o projeto
   * [x] Docker :ballot_box_with_check:
   * [x] Docker-compose :ballot_box_with_check:
-  * [ ] Redis 
+  * [ ] Redis :ballot_box_with_check:
   * [x] Mongodb :ballot_box_with_check:
   * [x] Nodejs :ballot_box_with_check:
-  * [x] Express :ballot_box_with_check:
-  * [x] Oracle :ballot_box_with_check:
+  * [x] Express
+  * [x] Oracle
   * [ ] PostgreSQL
   * [ ] MySQL
   * [ ] MSSQL
 
 ## Integração
   * Telegram
+:white_check_mark:
 
 ## Atenção
 Projeto ainda em desenvolvimento e refatoração.
