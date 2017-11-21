@@ -15,16 +15,16 @@ Depois de executado a instalação e o teste, esse será o resultado final.
 <img src="./img/send-mobile.jpg" alt="Mortality Bubble Chart" height="400">
 
 ### Tecnologias para o projeto
-  * Docker
-  * Docker-compose
-  * Redis
-  * Mongodb
-  * Nodejs
-  * Express
-  * Oracle
-  * PostgreSQL
-  * MySQL
-  * MSSQL
+  * [x] Docker
+  * [x] Docker-compose
+  * [ ] Redis
+  * [x] Mongodb
+  * [x] Nodejs
+  * [x] Express
+  * [x] Oracle
+  * [ ] PostgreSQL
+  * [ ] MySQL
+  * [ ] MSSQL
 
 ## Integração
   * Telegram
