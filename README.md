@@ -14,21 +14,20 @@ Depois de executado a instalação e o teste, esse será o resultado final.
 #### Outlook Mobile
 <img src="./img/send-mobile.jpg" alt="Mortality Bubble Chart" height="400">
 
-### Tecnologias para o projeto
-  * [x] Docker :ballot_box_with_check:
-  * [x] Docker-compose :ballot_box_with_check:
-  * [ ] Redis :ballot_box_with_check:
-  * [x] Mongodb :ballot_box_with_check:
-  * [x] Nodejs :ballot_box_with_check:
-  * [x] Express
-  * [x] Oracle
-  * [ ] PostgreSQL
-  * [ ] MySQL
-  * [ ] MSSQL
+### Tecnologias Implementadas
+  * Docker :white_check_mark:
+  * Docker-compose :white_check_mark:
+  * Redis 
+  * Mongodb :white_check_mark:
+  * Nodejs :white_check_mark:
+  * Express :white_check_mark:
+  * Oracle :white_check_mark:
+  * PostgreSQL
+  * MySQL
+  * MSSQL
 
 ## Integração
   * Telegram
-:white_check_mark:
 
 ## Atenção
 Projeto ainda em desenvolvimento e refatoração.
