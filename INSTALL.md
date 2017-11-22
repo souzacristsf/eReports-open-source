@@ -51,7 +51,7 @@ Com o comando ```docker ps``` para vericifar os container's. Para verificar os *
 | 6d68d597a493   | database-oracle  | "/bin/sh -c '/usr/..."  | 3 minutes ago  | Up 3 minutes   | 22/tcp, 0.0.0.0:1522->1521/tcp, 0.0.0.0:8081->8080/tcp  | db-oracle     |
 
 #### Observações
->>>
+>
 Caso no comando ```docker-compose logs``` no final obteve a seguinte mensagem **E-mail para seuEmailDeDestino enviado!** o e-mail foi enviado com sucesso. <br>
 Se obteve algum erro envolvendo `oracledb`. :pensive: :pensive: :pensive:   
 Siga esses passos. [Clique aqui](./erro-oracledb/README.md)
