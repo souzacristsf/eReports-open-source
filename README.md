@@ -15,6 +15,7 @@ Depois de executado a instalação e o teste, esse será o resultado final.
 <img src="./img/send-mobile.jpg" alt="Mortality Bubble Chart" height="400">
 
 ### Tecnologias Implementadas
+  * VueJS :heart:
   * Docker :white_check_mark:
   * Docker-compose :white_check_mark:
   * Redis 
@@ -25,6 +26,10 @@ Depois de executado a instalação e o teste, esse será o resultado final.
   * PostgreSQL
   * MySQL
   * MSSQL
+
+### Em Processo de Desenvolvimento
+  * API :heart:
+  * FrontEnd :heart:
 
 ## Integração
   * Telegram
