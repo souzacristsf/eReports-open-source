@@ -29,7 +29,7 @@ Depois de executado a instalação e o teste, esse será o resultado final.
 
 ### Em Processo de Desenvolvimento
   * API :heart:
-  * FrontEnd :heart:
+  * FrontEnd :heart: VueJS
 
 ## Integração
   * Telegram
