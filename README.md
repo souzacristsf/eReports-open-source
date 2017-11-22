@@ -5,7 +5,7 @@
 #### Resumo
 O projeto tem como objetivo conectar em qualquer banco de dados para envio de relatórios por e-mail. Através de drive's de conexão no backend. Sendo assim, o usuário poderá nas primeiras versões escolher o drive de conexão e cadastrar um SQL e E-mail para envio do report, possibilitanto o agendamento do mesmo para que seja possivél rodar todos os dias ou uma vez no dia. Integração com telegram para que seja acessivel uma visulização do relatorio em tempo real ou atualização do mesmo, depois de criado pela interface web.
 
-## Sucesso
+### Sucesso
 Depois de executado a instalação e o teste, esse será o resultado final.
 
 #### Outlook Web
@@ -31,30 +31,30 @@ Depois de executado a instalação e o teste, esse será o resultado final.
   * API :heart:
   * FrontEnd :heart: VueJS
 
-## Integração
+### Integração
   * Telegram
 
-## Atenção
+### Atenção
 Projeto ainda em desenvolvimento e refatoração.
 
-## Instalação e Teste
+### Instalação e Teste
 Pré-requisitos:
   * Docker
   * Docker-compose
 
 Consulte a [instalação](./INSTALL.md) para obter detalhes.  
 
-## Proxima implementação
+### Proxima implementação
   * Criação do frontend para agendamento dos envios e criação dos relatorios.
   * Estruturação do banco de dados para armazenamento dos script's SQL utilizando MongoDB.
 
-## Help
+### Help
 Problemas ou perguntas podem ser aberto issue [aqui](https://github.com/souzacristsf/eReports-open-source/issues)
 
-## Contribuindo 
+### Contribuindo 
 Gostaria de fazer parte desse projeto? :heart_eyes: 
 Para contruibuir com esse projeto, faça um fork do projeto e envie um pull request.
 
-# Creditos.
+### Creditos.
 [Michel Souza](https://github.com/souzacristsf) <br>
 [Higor Diego](https://github.com/higordiego)
