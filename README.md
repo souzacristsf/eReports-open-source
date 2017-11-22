@@ -56,4 +56,5 @@ Gostaria de fazer parte desse projeto? :heart_eyes:
 Para contruibuir com esse projeto, faça um fork do projeto e envie um pull request.
 
 # Creditos.
-[Michel Souza](https://github.com/souzacristsf)
+[Michel Souza](https://github.com/souzacristsf) <br>
+[Higor Diego](https://github.com/higordiego)
