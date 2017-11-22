@@ -9,7 +9,7 @@ Deixei um email de teste para execução.
 Feito tudo isso, `next` com o processo de instalação e teste.
 
 #### Execução do Projeto
->
+
 Para a execução e teste desse projeto estou assumindo que você ja tenha conhecimento e um convívio de *AMOR* sobre a estrutura **Docker** :heart: .
 Não conhece nada sobre Docker ? [clique aqui](https://docs.docker.com/get-started/), tente fazer o `Get Started` na pagina do docker depois continue a execução do projeto.
 
@@ -51,8 +51,7 @@ Com o comando ```docker ps``` para vericifar os container's. Para verificar os *
 | 6d68d597a493   | database-oracle  | "/bin/sh -c '/usr/..."  | 3 minutes ago  | Up 3 minutes   | 22/tcp, 0.0.0.0:1522->1521/tcp, 0.0.0.0:8081->8080/tcp  | db-oracle     |
 
 #### Observações
->
-Caso no comando ```docker-compose logs``` no final obteve a seguinte mensagem **E-mail para seuEmailDeDestino enviado!** o e-mail foi enviado com sucesso. <br>
+>Caso no comando ```docker-compose logs``` no final obteve a seguinte mensagem **E-mail para seuEmailDeDestino enviado!** o e-mail foi enviado com sucesso. <br>
 Se obteve algum erro envolvendo `oracledb`. :pensive: :pensive: :pensive:   
 Siga esses passos. [Clique aqui](./erro-oracledb/README.md)
 
