@@ -57,4 +57,5 @@ Para contruibuir com esse projeto, faça um fork do projeto e envie um pull requ
 
 ### Creditos.
 [Michel Souza](https://github.com/souzacristsf) <br>
-[Higor Diego](https://github.com/higordiego)
+[Higor Diego](https://github.com/higordiego) <br>
+[Lucas Baquião](https://github.com/lucastafarelbs)
