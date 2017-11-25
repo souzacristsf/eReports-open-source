@@ -1,10 +1,10 @@
 const hbs = require('handlebars')
 
-hbs.registerHelper("moduloIf", function(index_count,mod,block) {
-
-  if(parseInt(index_count)%(mod)=== 0){
-    return block.fn(this);}
-});
+hbs.registerHelper('moduloIf', function (index_count, mod, block) {
+    if (parseInt(index_count) % (mod) === 0) {
+        return block.fn(this)
+    }
+})
 
 const template = hbs.compile(`<!DOCTYPE html>
 <html>
@@ -107,6 +107,6 @@ th {
     </div>
 </div>
 </body>
-</html>`);
+</html>`)
 
 module.exports = template
