@@ -1,4 +1,4 @@
-var sql = 
+var sql =
             `select 
                 CASE WHEN MOD(ROWNUM,2) = 0 THEN '#e6e6e6' 
                             ELSE 'white'
@@ -13,6 +13,6 @@ var sql =
                 'Total' TOTAL,
                 NULL,
                 TO_CHAR(SUM(c.VALUE), 'L99G999G999D09', 'NLS_CURRENCY = ''R$''') VALUE
-            from sys.product c`;
+            from sys.product c`
 
-module.exports = sql;                
+module.exports = sql

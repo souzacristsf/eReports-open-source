@@ -1,54 +1,51 @@
 'use strict'
 const moment = require('moment'),
-      promise = require("bluebird");
+    promise = require('bluebird')
 
-const products = require('./sql/product');
-const oracledb = require('oracledb');
+const products = require('./sql/product')
+const oracledb = require('oracledb')
 
 module.exports = (Connection) => {
-
 // console.log('Connection: ', Connection)
-var myoffset = 0; // number of rows to skip
-var mymaxnumrows = 1000; // number of rows to fetch
+    var myoffset = 0 // number of rows to skip
+    var mymaxnumrows = 1000 // number of rows to fetch
 
-var query = (err, connection) => { 
-  
-  if (err) { console.error('estourou aqui: ', err); return; }
+    var query = (err, connection) => {
+        if (err) { console.error('estourou aqui: ', err); return }
 
-     connection.execute(
-        "ALTER SESSION SET NLS_NUMERIC_CHARACTERS = ',.'"
-      );
-      
-     var session = connection.execute(
-        "ALTER SESSION SET NLS_NUMERIC_CHARACTERS = ',.'"
-      );
+        connection.execute(
+            "ALTER SESSION SET NLS_NUMERIC_CHARACTERS = ',.'"
+        )
 
-     var query = connection.execute(
-          products,
-          {},
-          {
-            outFormat: oracledb.OBJECT,
-            maxRows: 1000
-          }
-      );
+        var session = connection.execute(
+            "ALTER SESSION SET NLS_NUMERIC_CHARACTERS = ',.'"
+        )
 
-    promise.join(session, query  ).spread(function (sessions, result){
-        const index = { 
-          title: 'Send Reports Email', 
-          products: result.rows, 
-        };
+        var query = connection.execute(
+            products,
+            {},
+            {
+                outFormat: oracledb.OBJECT,
+                maxRows: 1000
+            }
+        )
 
-        require('./send/product')(index);  
+        promise.join(session, query).spread(function (sessions, result) {
+            const index = {
+                title: 'Send Reports Email',
+                products: result.rows
+            }
 
-        return connection.close();
-      })
-      .catch(function (err){
-        console.log('Estourou bem aqui o erro');
-        console.log(err.message);
-        return connection.close();
-      });   
-};
+            require('./send/product')(index)
 
-Connection(query);
+            return connection.close()
+        })
+            .catch(function (err) {
+                console.log('Estourou bem aqui o erro')
+                console.log(err.message)
+                return connection.close()
+            })
+    }
 
+    Connection(query)
 }
