@@ -1,7 +1,7 @@
 ## Instalação e teste do projeto
 
 #### Observação 
-1° - Altere o IP da sua maquina local ou a maquina que vai rodar o projeto [aqui](./eReports/app/config/dbconfig.js), na variavel `connectString`. Obs: não apague a porta **49161**.
+1° - Altere o IP da sua maquina local ou a maquina que vai rodar o projeto [aqui](./eReports/app/config/urls.js), na variavel `connectString`. Obs: não apague a porta **49161**.
 
 2° - Altere o email do usuario remetente e senha e o destino do email [aqui](./eReports/app/email/config/user.js ). Caso não tenha email. :blush: 
 Deixei um email de teste para execução. 
