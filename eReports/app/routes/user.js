@@ -17,7 +17,8 @@ module.exports = app => {
         .put(Validate.createSocialUser, Controller.passwordUpdate)
 
     app.route(url)
-        .get(isAdmin, Controller.listAll)
+        .get(Controller.listAll)
+        // .get(isAdmin, Controller.listAll)
 
     // app.route(`${url}/:_id`)
     app.route(`/put/:_id`)

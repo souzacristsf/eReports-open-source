@@ -10,29 +10,10 @@ module.exports = app => {
     }
 
     const user = new Schema({
-        login: {type: String, required: true, index: {unique: true}, trim: true},
+        username: {type: String, required: true, index: {unique: true}, trim: true},
         password: {type: String, select: true, required: true, set: configPass},
-        person: {
-            fullName: {type: String, required: true, trim: true},
-            birthDate: {type: Date, required: true},
-            gender: {type: String, enum: [ 'Masculino', 'Feminino' ] },
-            phones: {
-                phone_cell: {type: String},
-                phone_fixed: {type: String}
-            },
-            created_at: {type: Date, default: Date.now},
-            updated_at: {type: Date},
-            deleted_at: {type: Date}
-        },
-        rule: {type: String, enum: [ 'Usuario', 'Master', 'Administrador' ], default: 'Usuario'},
-        isAdmin: {type: Boolean, default: false},
+        fullname: {type: String, required: true, trim: true},
         email: {type: String, required: true},
-        last_acess: {type: Date, default: Date.now},
-        isActive: {type: Boolean, default: true},
-        userActive: {type: Boolean, default: true},
-        userConfirmed: {type: Boolean, default: false},
-        token: {type: String},
-        cpf: {type: String},
         created_at: {type: Date, default: Date.now},
         updated_at: {type: Date},
         deleted_at: {type: Date}

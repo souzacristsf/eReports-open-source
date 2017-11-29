@@ -3,16 +3,10 @@ module.exports = app => {
     const ValidatorId = app.helps.validator_id
     return {
         create: (req, res, next) => {
-            req.assert('login', 'login 5 to 20 characters is required').notEmpty().len(5, 20)
+            req.assert('username', 'username is required').notEmpty().len(5, 20)
             req.assert('password', '6 to 20 characters required').notEmpty().len(6, 20)
             req.assert('email', 'email description is required').notEmpty().isEmail()
-            req.assert('rule', 'rule description is required').notEmpty()
-            req.assert('isAdmin', 'isAdmin description is required').notEmpty()
-            req.assert('cpf', 'cpf description is required').notEmpty()
-            req.assert('person.fullName', 'fullName 10 to 30 characters is required').notEmpty().len(10, 30)
-            req.assert('person.birthDate', 'birthDate is required').notEmpty()
-            req.assert('person.gender', 'gender is required').notEmpty()
-            req.assert('person.phones.phone_cell', 'phone cell 10 to 11 characters is required').notEmpty().len(10, 11)
+            req.assert('fullname', 'fullname is required').notEmpty()
 
             const errors = req.validationErrors()
             errors ? res.status(400).json(errors) : next()
@@ -51,7 +45,7 @@ module.exports = app => {
         },
         unique: (req, res, next) => {
             const query = {
-                $or: [{ login: req.body.login.trim() }, { email: req.body.email.trim() }]
+                $or: [{ login: req.body.username.trim() }, { email: req.body.email.trim() }]
             }
             User.findOne(query)
                 .then(user => {

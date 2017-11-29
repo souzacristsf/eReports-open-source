@@ -12,17 +12,7 @@ module.exports = app => {
         create: (req, res) => {
             const user = new User()
 
-            user.email = req.body.email
-            user.login = req.body.login
-            user.password = req.body.password
-            user.person.fullName = req.body.person.fullName
-            user.person.birthDate = new Date(req.body.person.birthDate)
-            user.isAdmin = req.body.isAdmin
-            user.cpf = req.body.cpf
-            user.rule = req.body.rule
-            user.person.gender = req.body.person.gender
-            user.person.phones.phone_cell = req.body.person.phones.phone_cell
-            user.person.phones.phone_fixed = req.body.person.phones.phone_fixed
+            Object.assign(user, req.body)
 
             Help.createUser(user, res)
         },
