@@ -54,4 +54,54 @@ git branch -D hotfix/some-fix
 git push --follow-tags origin develop master
 ```
 
-[...]
+## Git Flow como usar?
+
+Irei deixar aqui um link onde está o passo a passo de como se utiliza ele
+
+```
+https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html
+```
+
+### Instalação
+
+* Você precisa do git instalado como pré-requisito.
+
+* O git flow funciona no OSX, Linux e no Windows
+
+**Mac OSX**
+
+**Homebrew**
+```sh
+$ brew install git-flow-avh
+```
+
+**Macports**
+```sh
+$ port install git-flow-avh 
+```
+
+**Linux**
+
+```sh
+$ apt-get install git-flow 
+```
+
+**Windows (Cygwin)**
+
+```sh
+$ wget -q -O - --no-check-certificate https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh install stable | bash 
+```
+
+Depois de ter instalado ele é hora de começar a usa-lo.
+
+**Inicialização**
+
+Comece o uso do git-flow fazendo sua inicialização dentro de um repositório git existente:
+
+```sh
+git flow init
+```
+
+Você precisa responder algumas questões relativas às convenções de nomenclatura dos seus branches. É recomendado que sejam usados os valores padrões. 
+
+**COLOCAR A IMG**
