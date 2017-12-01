@@ -104,4 +104,4 @@ git flow init
 
 Você precisa responder algumas questões relativas às convenções de nomenclatura dos seus branches. É recomendado que sejam usados os valores padrões. 
 
-<img src="https://github.com/samverneck/testinho/blob/master/Captura%20de%20tela%20de%202017-12-01%2021-41-23.png">
+<img src="https://github.com/samverneck/testinho/blob/master/Captura%20de%20tela%20de%202017-12-01%2021-45-02%20-%202.png">
