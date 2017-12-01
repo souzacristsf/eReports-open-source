@@ -13,3 +13,45 @@ Os papéis dos branches são os seguintes:
 * **master:** última versão estável, contém todos os recursos entregues em produção, caso tenha algum hotfix, o conteúdo do hotfix também fica disponível em **master**
 
 * **feature/xxxx:** uma branch temporária que contém a implementação candidata na próxima release, onde seu ciclo de vida fica limitado à sua aprovação e validação, na sua finalização deve ir para o branch **develop**
+
+```sh
+# iniciando e desenvolvendo a feature
+# nessa parte podemos começar a desenvolver e posteriormente criar a feature
+git checkout -b feature/a
+git commit -a -m 'adicionando feature'
+#finalizando a feature 
+git checkout develop 
+git merge --no-ff feature/a
+#terminando a branch temporária
+git branch -D feature/a
+#enviando atualização
+git push origin develop
+
+```
+
+* **bugfix/xxxx:** uma branch temporária que contém uma correção que não é emergencial e pode ser levada para a próxima release. seu ciclo de vida é semelhante ao **feature**, somente muda o nome por respeito à nomenclatura da classificação da implementação
+
+* **hotfix/xxxx:** uma branch temporária que contém uma correção que é emergencial, devido à sua operação, deve ser definido por toda a equipe se a correção é uma **hotfix**. Seu ciclo de vida termina na validação da correção do erro e seu conteúdo deve ir para **master** e **develop**.
+
+```sh
+# iniciando e desenvolvendo o hotfix
+git checkout -b hotfix/some-fix
+git commit -a -m 'corrigindo erro quente'
+
+# finalizando o fix e mandando para o estável
+git checkout master
+git merge --no-ff hotfix/some-fix
+
+# tageando a versão hotfix para envio 
+git tag -a -m 'correcao de emergencia'  v1.0.1
+
+# atualizando desenvolvimento
+git checkout develop
+git merge --no-ff hotfix/some-fix
+#terminando a branch temporária
+git branch -D hotfix/some-fix
+# enviando hotfix junto com o que foi atualizado nos branches fixos
+git push --follow-tags origin develop master
+```
+
+[...]
