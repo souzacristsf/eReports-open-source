@@ -1,4 +1,6 @@
-// para montar grafico no front teremos esses libs. ---- ChartJS, D3JS e C3JS, http://echarts.baidu.com/
+/*
+Para montarmos graficos no front teremos essas libs. => ChartJS, D3JS e C3JS, http://echarts.baidu.com/
+*/
 'use strict'
 const moment = require('moment')
 const oracledb = require('oracledb')
