@@ -105,3 +105,13 @@ git flow init
 Você precisa responder algumas questões relativas às convenções de nomenclatura dos seus branches. É recomendado que sejam usados os valores padrões. 
 
 <img src="https://github.com/samverneck/testinho/blob/master/Captura%20de%20tela%20de%202017-12-01%2021-45-02%20-%202.png">
+
+Artigos que podem nos ajudar a seguir esse padrão:
+
+https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html
+
+https://medium.com/trainingcenter/git-da-necessidade-a-automa%C3%A7%C3%A3o-de-sua-release-parte-1-a9d697e8f9ee
+
+https://medium.com/trainingcenter/git-da-necessidade-a-automa%C3%A7%C3%A3o-de-sua-release-parte-2-410b95c6d7cf
+
+Inclusive usei de base para montar esse guia esses artigos.
