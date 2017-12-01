@@ -19,12 +19,12 @@ Os papéis dos branches são os seguintes:
 # nessa parte podemos começar a desenvolver e posteriormente criar a feature
 git checkout -b feature/a
 git commit -a -m 'adicionando feature'
-#finalizando a feature 
+# finalizando a feature 
 git checkout develop 
 git merge --no-ff feature/a
-#terminando a branch temporária
+# terminando a branch temporária
 git branch -D feature/a
-#enviando atualização
+# enviando atualização
 git push origin develop
 
 ```
