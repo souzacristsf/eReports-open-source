@@ -48,7 +48,7 @@ git tag -a -m 'correcao de emergencia'  v1.0.1
 # atualizando desenvolvimento
 git checkout develop
 git merge --no-ff hotfix/some-fix
-#terminando a branch temporária
+# terminando a branch temporária
 git branch -D hotfix/some-fix
 # enviando hotfix junto com o que foi atualizado nos branches fixos
 git push --follow-tags origin develop master
