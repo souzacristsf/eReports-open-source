@@ -9,19 +9,20 @@ module.exports = app => (req, res) => {
 
     User.findOne(query, {token: 0})
         .exec()
-        .then((user) => {
+        .then( (user) => {
+
             if (!user) {
                 res.status(401).json({ success: false, message: 'Invalid login' })
-            } else if (user) {
-                console.log(user)
-                console.log('user: ', user.password)
-                console.log('req: ', req.body.password)
+            } 
+            else {
+
                 const obj = user.toObject()
                 delete obj.password
+
                 if (!pass.validate(user.password, req.body.password)) {
                     res.status(401).json({ success: false, message: 'Invalid password' })
                 } else {
-                    console.log('oiiiiii')
+
                     var token = jwt.sign(user, app.get('superSecret'), {
                         expiresIn: new Date().setHours(new Date().getHours() + 5)
                     })
@@ -38,5 +39,5 @@ module.exports = app => (req, res) => {
                 };
             };
         })
-        .catch((err) => { throw err })
+        .catch( (err) => {  throw err })
 }

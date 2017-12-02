@@ -6,7 +6,7 @@ module.exports = app => {
     const isAdmin = app.middleware.permission
 
     // route login jwt
-    app.route('/')
+    app.route('/auth/login')
         .get((req, res) => res.json({msg: 'Bem vindo api delivery', version: '0.0.1'}))
         .post(auth)
 
