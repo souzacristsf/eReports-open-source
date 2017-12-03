@@ -1,3 +1,5 @@
+## Guia de Contribuição
+
 ### Um modelo de ciclo completo de desenvolvimento de software: Git-Flow
 
 Uma vez conhecendo os procedimentos acima, iremos escolher um modelo de fluxo de trabalho para desenvolvermos um software com uma ou mais equipes distintas contribuindo com mesmo software (ou base de código para ficar mais abrangente).
