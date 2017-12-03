@@ -8,6 +8,7 @@ services:
             - ./eReports:/eReports
         depends_on:
             - database-oracle
+            - mongodb
         ports:
             - 9000:9000
         command: bash -c "sleep 90; cd /eReports && npm i && npm install -g nodemon && npm start"
@@ -25,6 +26,19 @@ services:
         environment:
             - ORACLE_ENABLE_XDB=true
             - ORACLE_ALLOW_REMOTE=true
+
+    mongodb:
+        image: mongo:latest
+        container_name: "mongodb"
+        environment:
+          - MONGO_DATA_DIR=/data/db
+          - MONGO_LOG_DIR=/dev/null
+        volumes:
+          - ~/data/db:/data/db
+        ports:
+            - 27017:27017
+        command: mongod --smallfiles --logpath=/dev/null
+        restart: always
 
 
   

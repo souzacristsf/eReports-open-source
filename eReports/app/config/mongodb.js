@@ -35,7 +35,7 @@ mongoose.connect(url, options)
 connection.on('error', (err) => console.log('Erro de conexao.', err))
 connection.on('open', () => console.log('Conexão aberta.'))
 connection.on('connected', () => console.log('Conectado'))
-connection.on('disconnected', () => console.log('Desconectado'))
+connection.on('disconnected', () => { console.log('disconnected'); process.exit() })
 connection.on('reconnectFailed', () => console.log('-> gave up reconnecting'));
 
 process.on('SIGINT', () => {
