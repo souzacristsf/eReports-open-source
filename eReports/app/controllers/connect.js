@@ -10,7 +10,7 @@ const testConnection = (config, res) => {
     })
     .then(function(connection) {
       return connection.execute(
-        "SELECT SYSDATE DATA " +
+        "SELECT TO_CHAR(SYSDATE, 'dd/mm/yyyy hh24:mm:ss') DATA " +
           "FROM DUAL",
         [],
         {
@@ -18,18 +18,21 @@ const testConnection = (config, res) => {
         }
       )
       .then(function(result) {
-        res.status(201).json(result.rows)
+        console.log('Data: ', result.rows[0].DATA)
+        res.status(201).json({success: true, data: result.rows[0].DATA})
+
         return connection.close();
       })
       .catch(function(err) {
-        res.status(401).json({"error": true})
+        res.status(503).json({success: false, err: err.message})
         console.log(err.message);
 
         return connection.close();
       });
     })
     .catch(function(err) {
-      console.error(err.message);
+      res.status(503).send({ success: false, err: err.message})
+      console.error('erropppp: ', err.message);
     });
 }
   // Note: connections should always be released when not needed
@@ -44,9 +47,20 @@ connection.close(
 }
 module.exports = app => {
 
+    const Connection = app.models.connect
+    
     return {
         testConnect: (req, res) => {
+            console.log('Req: ', req.body)
             testConnection(req.body, res);
+        },
+
+        create: (req, res) => {
+            const connection = new Connection()
+
+            Object.assign(connection, req.body)
+
+            Help.create(connection, res)
         }
     }
 }
