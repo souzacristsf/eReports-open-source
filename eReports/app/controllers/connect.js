@@ -19,19 +19,19 @@ const testConnection = (config, res) => {
       )
       .then(function(result) {
         console.log('Data: ', result.rows[0].DATA)
-        res.status(201).json({success: true, data: result.rows[0].DATA})
+        res.status(201).json({success: true, type: 'success', msg: 'Conexão Efetuada com sucesso!!! :)', data: 'conexão realizada as ' + result.rows[0].DATA})
 
         return connection.close();
       })
       .catch(function(err) {
-        res.status(503).json({success: false, err: err.message})
+        res.status(503).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message})
         console.log(err.message);
 
         return connection.close();
       });
     })
     .catch(function(err) {
-      res.status(503).send({ success: false, err: err.message})
+      res.status(503).send({ success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message})
       console.error('erropppp: ', err.message);
     });
 }
