@@ -3,7 +3,7 @@
 <img src="./img/circle-dark.png" alt="Mortality Bubble Chart" height="200">
 
 #### Resumo
-O projeto tem como objetivo conectar em qualquer banco de dados para envio de relatórios por e-mail. Através de drive's de conexão no backend. Sendo assim, o usuário poderá nas primeiras versões escolher o drive de conexão e cadastrar um SQL e E-mail para envio do report, possibilitanto o agendamento do mesmo para que seja possivél rodar todos os dias ou uma vez no dia. Integração com telegram para que seja acessivel uma visulização do relatorio em tempo real ou atualização do mesmo, depois de criado pela interface web.
+O projeto tem como objetivo conectar em qualquer banco de dados para envio de relatórios por e-mail. Através de drive's de conexão no backend. Sendo assim, o usuário poderá nas primeiras versões escolher o drive de conexão e cadastrar um SQL e E-mail para envio do report, possibilitando o agendamento do mesmo para que seja possível rodar todos os dias ou uma vez no dia. Integração com telegram para que seja acessível uma visualização do relatório em tempo real ou atualização do mesmo, depois de criado pela interface web.
 
 ### Sucesso
 Depois de executado a instalação e o teste, esse será o resultado final.
