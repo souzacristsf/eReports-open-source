@@ -28,7 +28,7 @@ app.jwt = require('./app/config/jwt-config')(app)
 
 // console.log('app.jwt:', app.jwt)
 
-app.set('port', (process.env.PORT || 7000))
+app.set('port', (process.env.PORT || 9000))
 
 // const teste_conection = require('./teste_conection')(connect)
 
