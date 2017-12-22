@@ -10,6 +10,7 @@ module.exports = app => {
         user: {type: String, required: true, trim: true},
         password: {type: String, required: true, trim: true},
         nameConect: {type: String, required: true, trim: true},
+        connectString: {type: String, required: true, trim: true},
         descrConect: {type: String, required: true, trim: true},
         created_at: {type: Date, default: Date.now},
         updated_at: {type: Date},

@@ -49,7 +49,7 @@ module.exports = app => {
 
     const Connection = app.models.connect
     const Help = app.helps.crud
-    
+
     return {
         testConnect: (req, res) => {
             console.log('Req: ', req.body)
@@ -57,6 +57,7 @@ module.exports = app => {
         },
 
         create: (req, res) => {
+            console.log('Entrou no create: ', req.body )
             const connection = new Connection()
 
             Object.assign(connection, req.body)
