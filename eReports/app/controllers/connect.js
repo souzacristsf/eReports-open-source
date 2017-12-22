@@ -61,6 +61,16 @@ module.exports = app => {
             Object.assign(connection, req.body)
 
             Help.create(connection, res)
+        },
+        listAll: (req, res) => {
+            const query = {}
+            const mod = {
+                page: 1,
+                limit: 10,
+                select: ''
+            }
+
+            Help.listAll(Connection, query, mod, res)
         }
     }
 }

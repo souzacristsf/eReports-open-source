@@ -9,4 +9,7 @@ module.exports = app => {
     
     app.route(`${url}/new`)
         .post(Controller.create)
+
+    app.route(url)
+        .get(Controller.listAll)
 }
