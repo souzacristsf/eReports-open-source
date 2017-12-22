@@ -35,7 +35,7 @@ module.exports = app => {
             }
             if (req.body.password) req.body.password = configPass(req.body.password)
             const mod = req.body
-            // console.log('mod: ', mod);
+            
             Help.update(User, query, mod, res)
         },
         delete: (req, res) => {

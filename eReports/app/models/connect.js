@@ -6,7 +6,6 @@ module.exports = app => {
 
     const connection = new Schema({
         driver: {type: String, required: true, trim: true},
-        database: {type: String, required: true, trim: true},
         user: {type: String, required: true, trim: true},
         password: {type: String, required: true, trim: true},
         nameConect: {type: String, required: true, trim: true},

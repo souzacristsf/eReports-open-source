@@ -52,12 +52,10 @@ module.exports = app => {
 
     return {
         testConnect: (req, res) => {
-            console.log('Req: ', req.body)
             testConnection(req.body, res);
         },
 
         create: (req, res) => {
-            console.log('Entrou no create: ', req.body )
             const connection = new Connection()
 
             Object.assign(connection, req.body)

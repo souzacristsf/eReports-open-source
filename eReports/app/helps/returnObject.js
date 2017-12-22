@@ -7,6 +7,7 @@ function returnSuccessCreateUser (object, res) {
 }
 
 function returnSuccess (object, res) {
+    console.log('Oii')
     res.status(200).json(object)
 }
 
