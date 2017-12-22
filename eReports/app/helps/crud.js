@@ -2,7 +2,6 @@ module.exports = app => {
     const Return = require('./returnObject')
     const successOrError = require('./successOrError')
 
-    console.log(successOrError.error)
     return {
         createUser: (Model, res) => Model.save()
             .then(successOrError.success(res, Return.successCreateUser), successOrError.error(res)),

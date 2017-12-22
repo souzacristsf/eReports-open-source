@@ -25,14 +25,12 @@ const testConnection = (config, res) => {
       })
       .catch(function(err) {
         res.status(503).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message})
-        console.log(err.message);
 
         return connection.close();
       });
     })
     .catch(function(err) {
       res.status(503).send({ success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message})
-      console.error('erropppp: ', err.message);
     });
 }
   // Note: connections should always be released when not needed
