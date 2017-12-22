@@ -48,6 +48,7 @@ connection.close(
 module.exports = app => {
 
     const Connection = app.models.connect
+    const Help = app.helps.crud
     
     return {
         testConnect: (req, res) => {
