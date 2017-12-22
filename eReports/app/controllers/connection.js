@@ -1,6 +1,7 @@
 var oracledb = require('oracledb');
 
 const testConnection = (config, res) => {
+    
  return oracledb.getConnection(
     {
         
@@ -19,18 +20,18 @@ const testConnection = (config, res) => {
       )
       .then(function(result) {
         console.log('Data: ', result.rows[0].DATA)
-        res.status(201).json({success: true, type: 'success', msg: 'Conexão Efetuada com sucesso!!! :)', data: 'conexão realizada as ' + result.rows[0].DATA})
+        res.status(201).json({success: true, type: 'success', msg: 'Conexão Efetuada com sucesso!!! :)', data: 'conexão realizada as ' + result.rows[0].DATA, title:'Status da Conexão'})
 
         return connection.close();
       })
       .catch(function(err) {
-        res.status(503).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message})
+        res.status(503).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message, title:'Status da Conexão'})
 
         return connection.close();
       });
     })
     .catch(function(err) {
-      res.status(503).send({ success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message})
+      res.status(503).send({ success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message, title:'Status da Conexão'})
     });
 }
   // Note: connections should always be released when not needed
@@ -45,7 +46,7 @@ connection.close(
 }
 module.exports = app => {
 
-    const Connection = app.models.connect
+    const Connection = app.models.connection
     const Help = app.helps.crud
 
     return {

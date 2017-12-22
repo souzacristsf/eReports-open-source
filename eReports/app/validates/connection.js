@@ -1,5 +1,5 @@
 module.exports = app => {
-    const Connect = app.models.connect
+    const Connection = app.models.connection
     const ValidatorId = app.helps.validator_id
     return {
         create: (req, res, next) => {
@@ -7,6 +7,14 @@ module.exports = app => {
             req.assert('descrConect', 'descrConect is required').notEmpty()
             req.assert('driver', 'driver is required').notEmpty()
             req.assert('nameConect', 'nameConect is required').notEmpty()
+            req.assert('user', 'user is required').notEmpty()
+            req.assert('password', 'password is required').notEmpty()
+
+            const errors = req.validationErrors()
+            errors ? res.status(400).json(errors) : next()
+        },
+         testeConect: (req, res, next) => {
+            req.assert('connectString', 'connectString is required').notEmpty()
             req.assert('user', 'user is required').notEmpty()
             req.assert('password', 'password is required').notEmpty()
 
@@ -52,9 +60,9 @@ module.exports = app => {
 			const query = {
                 $and: [ { driver: req.body.driver.trim() }, { connectString: req.body.connectString.trim() }, { user: req.body.user.trim() } ]
 			}
-			Connect.findOne(query)
-			.then(data => data ? res.status(400).json({success: false, type: 'danger', msg: 'Dados já cadastrados', data: 'Conexão já cadastrada!!!'}) : next()) 
-			.catch(err => res.status(500).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err}))
+			Connection.findOne(query)
+			.then(data => data ? res.status(409).json({success: false, type: 'danger', msg: 'Dados do Driver, Database e User já estão cadastrados. :)', data: 'Conexão já cadastrada!!!', title:'Status do Cadastro'}) : next()) 
+			.catch(err => res.status(500).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err, title:'Status do Cadastro'}))
 		}
     }
 }

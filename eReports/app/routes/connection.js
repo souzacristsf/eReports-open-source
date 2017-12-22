@@ -1,11 +1,11 @@
 module.exports = app => {
     const url = `${app.url}/connect`
-    const Controller = app.controllers.connect
-    const Validate = app.validates.connect
+    const Controller = app.controllers.connection
+    const Validate = app.validates.connection
 
     // route login jwt
     app.route(`${url}/test`)
-        .post(Validate.create, Controller.testConnect)
+        .post(Validate.testeConect, Controller.testConnect)
     
     app.route(`${url}/new`)
         .post(Validate.create, Validate.unique, Controller.create)
