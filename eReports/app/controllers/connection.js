@@ -66,7 +66,7 @@ module.exports = app => {
             const mod = {
                 page: 1,
                 limit: 10,
-                select: ''
+                select: '-__v -password -descrConect'
             }
 
             Help.listAll(Connection, query, mod, res)

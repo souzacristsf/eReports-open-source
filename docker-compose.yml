@@ -9,6 +9,8 @@ services:
         depends_on:
             - database-oracle
             - mongodb
+        networks:
+            - myapp
         ports:
             - 9000:9000
         command: bash -c "sleep 90; cd /eReports && npm i && npm install -g nodemon && npm start"
@@ -37,8 +39,11 @@ services:
           - ~/data/db:/data/db
         ports:
             - 27017:27017
+        networks:
+            - myapp
         command: mongod --smallfiles --logpath=/dev/null
         restart: always
-
-
+networks:
+    myapp:
+        driver: bridge
   

@@ -7,7 +7,15 @@ function returnSuccessCreateUser (object, res) {
 }
 
 function returnSuccess (object, res) {
-    res.status(200).json(object)
+    if(object.password){
+        const obj = object.toObject()
+        delete obj.password
+        delete obj.__v
+        delete obj.descrConect
+        res.status(200).json(obj)
+    } else {
+        res.status(200).json(object)
+    }
 }
 
 function returnError (err, res) {

@@ -1,7 +1,7 @@
 module.exports = app = ({
     mongodb: {
         online: '',
-        offline: 'mongodb://128.1.9.146:27017/ereports'
+        offline: 'mongodb://mongodb:27017/ereports'
     },
     api: '/api/v1',
     oracle: {
