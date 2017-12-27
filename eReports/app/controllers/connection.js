@@ -11,7 +11,7 @@ const testConnection = (config, res) => {
     })
     .then(function(connection) {
       return connection.execute(
-        "SELECT TO_CHAR(SYSDATE, 'dd/mm/yyyy hh24:mm:ss') DATA " +
+        "SELECT SYSDATE DATA " +
           "FROM DUAL",
         [],
         {
