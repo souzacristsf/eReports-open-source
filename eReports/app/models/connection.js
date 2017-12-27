@@ -13,6 +13,7 @@ module.exports = app => {
         nameConect: {type: String, required: true, trim: true},
         connectString: {type: String, required: true, trim: true},
         descrConect: {type: String, required: true, trim: true},
+        status: {type : String, required: true, enum : [ 'Active', 'Inactive' ], default : 'Active'},
         created_at: {type: Date, default: Date.now},
         updated_at: {type: Date},
         deleted_at: {type: Date}

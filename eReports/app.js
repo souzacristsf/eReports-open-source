@@ -48,6 +48,7 @@ const io = require('socket.io')(server)
 
 app.use(function (req, res, next) {
     res.io = io
+    res.set('X-Powered-By', 'PHP/7.1.7')
     next()
 })
 
