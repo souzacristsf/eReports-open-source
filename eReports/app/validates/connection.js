@@ -62,7 +62,7 @@ module.exports = app => {
 			}
 			Connection.findOne(query)
 			.then(data => data ? res.status(409).json({success: false, type: 'danger', msg: 'Dados do Driver, Database e User já estão cadastrados. :)', data: 'Conexão já cadastrada!!!', title:'Status do Cadastro'}) : next()) 
-			.catch(err => res.status(500).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err, title:'Status do Cadastro'}))
+			.catch(err => res.status(500).json({success: false, type: 'danger', msg: err , data: new Date().now , title:'Status do Cadastro'}))
 		}
     }
 }
