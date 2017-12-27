@@ -20,7 +20,7 @@ const testConnection = (config, res) => {
       )
       .then(function(result) {
         console.log('Data: ', result.rows[0].DATA)
-        res.status(201).json({success: true, type: 'success', msg: 'Conexão Efetuada com sucesso!!! :)', data: 'conexão realizada as ' + result.rows[0].DATA, title:'Status da Conexão'})
+        res.status(201).json({success: true, type: 'success', msg: 'Conexão Efetuada com sucesso!!! :)', data: result.rows[0].DATA, title:'Status da Conexão'})
 
         return connection.close();
       })
