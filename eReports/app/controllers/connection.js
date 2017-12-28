@@ -77,7 +77,17 @@ module.exports = app => {
             }
 
             const mod = req.body
+            mod.$unset = { deleted_at: 1 }
             mod.updated_at = new Date();
+
+            Help.update(Connection, query, mod, res)
+        },
+        delete: (req, res) => {
+            const query = req.body._id
+
+            const mod = {
+				deleted_at: new Date()
+			}
 
             Help.update(Connection, query, mod, res)
         },
