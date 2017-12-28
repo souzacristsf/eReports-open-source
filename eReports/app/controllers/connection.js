@@ -77,7 +77,8 @@ module.exports = app => {
             }
 
             const mod = req.body
-            
+            mod.updated_at = new Date();
+
             Help.update(Connection, query, mod, res)
         },
     }
