@@ -54,6 +54,8 @@ module.exports = app => {
             }
         },
         delete: (req, res, next) => {
+            console.log('Teste: ', Number.isInteger(req.body._id))
+            console.log('Teste: ', req.body._id)
             Number.isInteger(req.body._id) ? next() : res.status(400).json({ error: 'paramns _id invalid!' })
         },
         unique: (req, res, next)=>{
