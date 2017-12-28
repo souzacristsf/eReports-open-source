@@ -57,6 +57,7 @@ module.exports = app => {
             console.log('Teste: ', Number.isInteger(req.body._id))
             console.log('body: ', req.body)
             console.log('Teste: ', req.body._id)
+            console.log('req: ', req)
             Number.isInteger(req.body._id) ? next() : res.status(400).json({ error: 'paramns _id invalid!' })
         },
         unique: (req, res, next)=>{
