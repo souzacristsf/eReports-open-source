@@ -70,6 +70,15 @@ module.exports = app => {
             }
 
             Help.listAll(Connection, query, mod, res)
-        }
+        },
+        update: (req, res) => {
+            const query = {
+                _id: req.body._id
+            }
+
+            const mod = req.body
+            
+            Help.update(Connection, query, mod, res)
+        },
     }
 }
