@@ -12,5 +12,5 @@ module.exports = app => {
 
     app.route(url)
         .get(Controller.listAll)
-        .put(Validate.create, Validate.unique, Controller.update)
+        .put(Validate.create, Validate.uniqueId, Controller.update)
 }

@@ -61,7 +61,16 @@ module.exports = app => {
                 $and: [ { driver: req.body.driver.trim() }, { connectString: req.body.connectString.trim() }, { user: req.body.user.trim() } ]
 			}
 			Connection.findOne(query)
-			.then(data => data ? res.status(409).json({success: false, type: 'danger', msg: 'Dados do Driver, Database e User já estão cadastrados. :)', data: 'Conexão já cadastrada!!!', title:'Status do Cadastro'}) : next()) 
+			.then(data => data ? res.status(409).json({success: false, type: 'danger', msg: 'Dados do Driver, Database e User já estão cadastrados. :)', data: new Date(), title:'Status do Cadastro'}) : next()) 
+			.catch(err => res.status(500).json({success: false, type: 'danger', msg: err , data: new Date().now , title:'Status do Cadastro'}))
+		},
+        uniqueId: (req, res, next)=>{
+			const query = {
+                _id: { $ne: req.body._id},
+                $and: [ { driver: req.body.driver.trim() }, { connectString: req.body.connectString.trim() }, { user: req.body.user.trim() } ]
+			}
+			Connection.findOne(query)
+			.then(data => data ? res.status(409).json({success: false, type: 'danger', msg: 'Dados do Driver, Database e User já estão cadastrados. :)', data: new Date(), title:'Status do Cadastro'}) : next()) 
 			.catch(err => res.status(500).json({success: false, type: 'danger', msg: err , data: new Date().now , title:'Status do Cadastro'}))
 		}
     }
