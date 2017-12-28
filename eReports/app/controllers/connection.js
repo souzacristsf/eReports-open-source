@@ -84,7 +84,9 @@ module.exports = app => {
         },
         delete: (req, res) => {
             const query = req.body._id
-
+            const queryy = req.body
+            console.log('query: ', query)
+            console.log('queryy: ', queryy)
             const mod = {
 				deleted_at: new Date()
 			}
