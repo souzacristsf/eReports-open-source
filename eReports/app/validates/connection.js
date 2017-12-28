@@ -54,7 +54,7 @@ module.exports = app => {
             }
         },
         delete: (req, res, next) => {
-            isNumber(req.params._id) ? next() : res.status(400).json({ error: 'paramns _id invalid!' })
+            Number.isInteger(req.params._id) ? next() : res.status(400).json({ error: 'paramns _id invalid!' })
         },
         unique: (req, res, next)=>{
 			const query = {
