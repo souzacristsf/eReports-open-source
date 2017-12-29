@@ -73,22 +73,21 @@ module.exports = app => {
         },
         update: (req, res) => {
             const query = {
-                _id: req.body._id
+                _id: parseInt(req.params._id)
             }
-
             const mod = req.body
+            mod.status = 'Active'
             mod.$unset = { deleted_at: 1 }
             mod.updated_at = new Date();
-
             Help.update(Connection, query, mod, res)
         },
         delete: (req, res) => {
-            const query = req.body._id
-            const queryy = req.body
-            console.log('query: ', query)
-            console.log('queryy: ', queryy)
+            const query = {
+                _id: parseInt(req.params._id)
+            }
             const mod = {
-				deleted_at: new Date()
+				deleted_at: new Date(),
+                status: 'Inactive'
 			}
 
             Help.update(Connection, query, mod, res)

@@ -12,7 +12,8 @@ module.exports = app => {
 
     app.route(url)
         .get(Controller.listAll)
-        .put(Validate.create, Validate.uniqueId, Controller.update)
-        .delete(Validate.delete, Controller.delete)
 
+    app.route(`${url}/:_id`)
+        .put(Validate.update, Validate.uniqueId, Controller.update)
+        .delete(Validate.delete, Controller.delete)
 }

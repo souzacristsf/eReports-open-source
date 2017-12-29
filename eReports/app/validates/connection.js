@@ -41,24 +41,19 @@ module.exports = app => {
             req.assert('driver', 'driver is required').notEmpty()
             req.assert('nameConect', 'nameConect is required').notEmpty()
             req.assert('user', 'user is required').notEmpty()
-            req.assert('password', 'password is required').notEmpty()
 
             const errors = req.validationErrors()
 
             if (errors) {
                 return res.status(400).json(errors)
-            } else if (!ValidatorId(req.params._id)) {
+            } else if (!Number.isInteger(parseInt(req.params._id))) {
                 return res.status(400).json({ error: 'paramns _id invalid!' })
             } else {
                 next()
             }
         },
         delete: (req, res, next) => {
-            console.log('Teste: ', Number.isInteger(req.body._id))
-            console.log('body: ', req.body)
-            console.log('Teste: ', req.body._id)
-            console.log('req: ', req)
-            Number.isInteger(req.body._id) ? next() : res.status(400).json({ error: 'paramns _id invalid!' })
+            Number.isInteger(parseInt(req.params._id)) ? next() : res.status(400).json({ error: 'paramns _id invalid!' })
         },
         unique: (req, res, next)=>{
 			const query = {
