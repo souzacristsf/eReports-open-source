@@ -37,7 +37,7 @@ services:
           - MONGO_LOG_DIR=/dev/null
           - TZ=America/Sao_Paulo
         volumes:
-          - ~/data/db:/data/db
+          - ./data/db:/data/db
         ports:
             - 27017:27017
         networks:

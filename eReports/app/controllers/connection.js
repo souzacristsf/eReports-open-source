@@ -87,6 +87,7 @@ module.exports = app => {
             }
             const mod = {
 				deleted_at: new Date(),
+                updated_at: new Date(),
                 status: 'Inactive'
 			}
 

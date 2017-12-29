@@ -4,9 +4,9 @@
   "description": "",
   "main": "select.js",
   "scripts": {
-    "start": "nodemon --ignore public app.js",
     "lint": "eslint '**/*.js' ",
-    "lint:fix": "eslint '**/*.js' --fix"
+    "lint:fix": "eslint '**/*.js' --fix",
+    "start": "nodemon --ignore public app.js"
   },
   "author": "",
   "license": "ISC",
