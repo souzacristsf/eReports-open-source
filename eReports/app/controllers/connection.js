@@ -48,16 +48,19 @@ module.exports = app => {
 
     const Connection = app.models.connection
     const Help = app.helps.crud
+    const pluck = require('./pluck') 
 
     return {
         testConnect: (req, res) => {
-            testConnection(req.body, res);
+            const fields = pluck(req.body, 'user', 'password', 'connectString')
+            testConnection(fields, res);
         },
 
         create: (req, res) => {
             const connection = new Connection()
+            const fields = pluck(req.body, 'driver', 'user', 'password', 'nameConect', 'connectString', 'descrConect')
 
-            Object.assign(connection, req.body)
+            Object.assign(connection, fields)
 
             Help.create(connection, res)
         },
@@ -75,7 +78,9 @@ module.exports = app => {
             const query = {
                 _id: parseInt(req.params._id)
             }
-            const mod = req.body
+            const fields = pluck(req.body, 'driver', 'user', 'password', 'nameConect', 'connectString', 'descrConect')
+
+            const mod = fields
             mod.status = 'Active'
             mod.$unset = { deleted_at: 1 }
             mod.updated_at = new Date();

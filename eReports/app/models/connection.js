@@ -6,7 +6,7 @@ module.exports = app => {
     const ObjectId = mongoose.Schema.Types.ObjectId
 
     const connection = new Schema({
-        _id: {type: Number, index: true},
+        conect_id: {type: Number, index: true},
         driver: {type: String, required: true, trim: true},
         user: {type: String, required: true, trim: true},
         password: {type: String, required: true, trim: true},
@@ -19,7 +19,7 @@ module.exports = app => {
         deleted_at: {type: Date}
     })
     autoIncrement.initialize(mongoose.connection);
-    connection.plugin(autoIncrement.plugin, { model: 'Connection', field: '_id', startAt: 1, incrementBy: 1 });
+    connection.plugin(autoIncrement.plugin, { model: 'Connection', field: 'conect_id', startAt: 1, incrementBy: 1 });
     connection.plugin(mongoosePaginate)
 
     return mongoose.model('Connection', connection)
