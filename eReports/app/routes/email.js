@@ -5,7 +5,7 @@ module.exports = app => {
 
     // route login jwt
     app.route(`${url}/test`)
-        .post()
+        .post(Validate.create, Controller.sendEmailTest)
     
     app.route(`${url}/new`)
         .post(Validate.create, Validate.unique, Controller.create)

@@ -29,7 +29,7 @@ module.exports = app => {
             const mod = {
                 page: 1,
                 limit: 10,
-                select: '-password'
+                select: '-__v, -_id'
             }
 
             Help.listAll(Email, query, mod, res)
@@ -39,6 +39,18 @@ module.exports = app => {
             const mod = {password: 0}
 
             Help.listOne(Email, query, mod, res)
+        },
+        sendEmailTest: (req, res) => {
+            const service = req.body.service
+            const config = {
+                to: req.body.to,
+                user: req.body.from,
+                remetente: req.body.from,
+                assunto: 'eReports e-mail de teste :)',
+                pass: req.body.password
+            }
+
+            require(`../email/${service}`)(config, res, 'teste')
         }
     }
 }

@@ -25,25 +25,18 @@ const testConnection = (config, res) => {
         return connection.close();
       })
       .catch(function(err) {
-        res.status(503).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message, title:'Status da Conexão'})
+          console.log('Meu Erro 1: ', err)        
+          res.status(503).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message, title:'Status da Conexão'})
 
         return connection.close();
       });
     })
     .catch(function(err) {
-      res.status(503).send({ success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message, title:'Status da Conexão'})
+        console.log('Meu Erro: ', err)
+        res.status(503).send({ success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message, title:'Status da Conexão'})
     });
 }
-  // Note: connections should always be released when not needed
-function doRelease(connection)
-{
-connection.close(
-    function(err) {
-    if (err) {
-        console.error(err.message);
-    }
-    });
-}
+
 module.exports = app => {
 
     const Connection = app.models.connection
@@ -60,6 +53,7 @@ module.exports = app => {
             const connection = new Connection()
             const fields = pluck(req.body, 'driver', 'user', 'password', 'nameConect', 'connectString', 'descrConect')
 
+            console.log(fields)
             Object.assign(connection, fields)
 
             Help.create(connection, res)
@@ -69,16 +63,23 @@ module.exports = app => {
             const mod = {
                 page: 1,
                 limit: 10,
-                select: '-__v -password'
+                select: '-__v, -_id'
             }
 
             Help.listAll(Connection, query, mod, res)
         },
         update: (req, res) => {
             const query = {
-                _id: parseInt(req.params._id)
+                connect_id: parseInt(req.params.connect_id)
             }
-            const fields = pluck(req.body, 'driver', 'user', 'password', 'nameConect', 'connectString', 'descrConect')
+            const fields = pluck(req.body, 'driver', 'user', 'nameConect', 'connectString', 'descrConect')
+            
+            Connection.find(query).then(
+                data => {
+                    if(data.password != req.body.password){
+                        fields.password = req.body.password
+                    }
+                })
 
             const mod = fields
             mod.status = 'Active'
@@ -88,7 +89,7 @@ module.exports = app => {
         },
         delete: (req, res) => {
             const query = {
-                _id: parseInt(req.params._id)
+                connect_id: parseInt(req.params.connect_id)
             }
             const mod = {
 				deleted_at: new Date(),

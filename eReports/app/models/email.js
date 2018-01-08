@@ -6,7 +6,7 @@ module.exports = app => {
     const ObjectId = mongoose.Schema.Types.ObjectId
 
     const email = new Schema({
-        email_id: {type: Number, index: true},
+        // email_id: {type: Number, index: true, unique: true},
         to: {type: String, required: true, trim: true},
         from: {type: String, required: true, trim: true},
         password: {type: String, required: true, trim: true},
@@ -14,6 +14,9 @@ module.exports = app => {
         created_at: {type: Date, default: Date.now},
         updated_at: {type: Date},
         deleted_at: {type: Date}
+    })
+    email.virtual('email_id').get(function(){
+        return this._id;
     })
     autoIncrement.initialize(mongoose.connection);
     email.plugin(autoIncrement.plugin, { model: 'Email', field: 'email_id', startAt: 1, incrementBy: 1 });

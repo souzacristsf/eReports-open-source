@@ -12,11 +12,11 @@ function returnSuccess (object, res) {
         delete obj.password
         delete obj.__v
         delete obj.descrConect
-        res.status(200).json(obj)
+        res.status(200).json(obj)   
     } else {
         res.status(200).json(object)
     }
-}
+}   
 
 function returnError (err, res) {
     res.status(400).json(err)

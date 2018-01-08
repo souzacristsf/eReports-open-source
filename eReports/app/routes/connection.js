@@ -13,7 +13,7 @@ module.exports = app => {
     app.route(url)
         .get(Controller.listAll)
 
-    app.route(`${url}/:_id`)
+    app.route(`${url}/:connect_id`)
         .put(Validate.update, Validate.uniqueId, Controller.update)
         .delete(Validate.delete, Controller.delete)
 }

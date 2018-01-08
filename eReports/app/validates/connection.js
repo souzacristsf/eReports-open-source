@@ -33,7 +33,7 @@ module.exports = app => {
             errors ? res.status(400).json(errors) : next()
         },
         listOne: (req, res, next) => {
-            ValidatorId(req.params._id) ? next() : res.status(400).json({ error: 'paramns _id invalid!' })
+            ValidatorId(req.params.connect_id) ? next() : res.status(400).json({ error: 'paramns connect_id invalid!' })
         },
         update: (req, res, next) => {
             req.assert('connectString', 'connectString is required').notEmpty()
@@ -46,14 +46,14 @@ module.exports = app => {
 
             if (errors) {
                 return res.status(400).json(errors)
-            } else if (!Number.isInteger(parseInt(req.params._id))) {
-                return res.status(400).json({ error: 'paramns _id invalid!' })
+            } else if (!Number.isInteger(parseInt(req.params.connect_id))) {
+                return res.status(400).json({ error: 'paramns connect_id invalid!' })
             } else {
                 next()
             }
         },
         delete: (req, res, next) => {
-            Number.isInteger(parseInt(req.params._id)) ? next() : res.status(400).json({ error: 'paramns _id invalid!' })
+            Number.isInteger(parseInt(req.params.connect_id)) ? next() : res.status(400).json({ error: 'paramns connect_id invalid!' })
         },
         unique: (req, res, next)=>{
 			const query = {
@@ -65,7 +65,7 @@ module.exports = app => {
 		},
         uniqueId: (req, res, next)=>{
 			const query = {
-                _id: { $ne: req.body._id},
+                connect_id: { $ne: req.body.connect_id},
                 $and: [ { driver: req.body.driver.trim() }, { connectString: req.body.connectString.trim() }, { user: req.body.user.trim() } ]
 			}
 			Connection.findOne(query)
