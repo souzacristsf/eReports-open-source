@@ -8,6 +8,7 @@ const path = require('path')
 const validator = require('express-validator')
 const consign = require('consign')
 const schedule = require('node-schedule')
+const moment = require('moment')
 
 const app = express()
 
@@ -27,6 +28,17 @@ app.jwt = require('./app/config/jwt-config')(app)
 // app.use('/api', app.jwt);
 
 // console.log('app.jwt:', app.jwt)
+const send = require('./app/schedule/schedule')
+let rule = new schedule.RecurrenceRule()
+rule.minute = new schedule.Range(0, 59, 1)
+
+schedule.scheduleJob(rule, () => {
+  send(app).dashboard()
+  // console.log('Executou agora: ', moment(new Date()).tz('America/Sao_Paulo').format())
+  // console.log('Executou agora: ', moment.tz(new Date(), 'America/Sao_Paulo').format())
+  // console.log('Testando novo: ',  moment(new Date()).utcOffset("-02:00").format('YYYY-MM-DD HH:mm:ss'))
+  // console.log('Testando nova: ',  moment(new Date()).utcOffset("-02:00").toDate())
+})
 
 app.set('port', (process.env.PORT || 9000))
 
@@ -60,6 +72,7 @@ consign({cwd: 'app', verbose: false})
   .include('controllers')
   .include('validates')
   .include('routes')
+  .include('schedule')
 //   .include('email')
   .into(app)
 
