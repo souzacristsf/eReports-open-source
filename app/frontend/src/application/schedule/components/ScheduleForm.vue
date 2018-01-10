@@ -29,7 +29,7 @@
               <div id="srv" v-if="form['query']">Conexão e Driver escolhido: <strong>{{form['query'].database.connectString}} e {{form['query'].database.driver}}</strong></div>
               <b-form-fieldset
                 label="SQL Cadastrado" v-if="form['query']">
-                <textarea disabled rows="3" class="form-control" :value="sql"></textarea>
+                <textarea disabled rows="6" class="form-control" :value="sql"></textarea>
               </b-form-fieldset>
             </b-card>
           </b-form-fieldset>
@@ -82,7 +82,7 @@
             </b-col>
           </b-row>
           <div class="form-actions">
-            <b-button size="sm" @click="saveSchedule" type="submit" v-if="checked === 'no'" variant="primary">Salvar</b-button>
+            <b-button size="sm" @click="saveSchedule" :disabled="btnSave" type="submit" v-if="checked === 'no'" variant="primary">Salvar</b-button>
             <b-button size="sm" type="submit" v-if="checked === 'yes'" variant="outline-success">Enviar Relatório</b-button>
             <b-button size="sm" type="submit" variant="danger">Cancelar</b-button>
             <b-button size="sm" v-if="options.email.length === 0" :to="{name: 'Email'}" type="button" variant="outline-secondary">Registrar Email</b-button>
@@ -108,6 +108,7 @@ export default {
         startTime: '',
         endTime: ''
       },
+      btnSave: false,
       checked: 'no',
       checkedAllDay: 'no'
     }
@@ -123,6 +124,15 @@ export default {
       return (this.form['query']) ? this.form['query'].query[0] : ''
     }
   },
+  // watch: {
+  //   form: {
+  //     handler () {
+  //       console.log('Entrou no watch')
+  //       this.btnSave = true
+  //     },
+  //     deep: true
+  //   }
+  // },
   methods: {
     saveSchedule () {
       const newSchedule = Object
@@ -136,9 +146,6 @@ export default {
       let info = {}
       doCreateSchedule(newSchedule)
         .then(({data}) => {
-          console.log('Dados Cadastrados: ', data)
-          console.log('Data Inicio: ', data.startDate.toLocaleString())
-          console.log('Data Fim: ', data.endDate.toLocaleString())
           info.type = 'success'
           info.msg = 'Agendamento realizado com sucesso'
           info.data = new Date()
@@ -151,11 +158,15 @@ export default {
     formatDate () {
       const endTime = this.form.endTime + ':00'
       const startTime = this.form.startTime + ':00'
+      const startDate = new Date(this.form.startDate + ' ' + startTime)
+      const endDate = new Date(this.form.endDate + ' ' + endTime)
       return {
-        startDate: new Date(this.form.startDate + ' ' + startTime),
-        endDate: new Date(this.form.endDate + ' ' + endTime),
+        startDate: startDate,
+        endDate: endDate,
         startTime: startTime,
-        endTime: endTime
+        endTime: endTime,
+        sTime: startDate.getTime(),
+        eTime: endDate.getTime()
       }
     },
     sendMsgModal (value) {
@@ -173,5 +184,8 @@ export default {
   }
   .mb-3, .my-3 {
     margin-bottom: 0 !important;
+  }
+  textarea {
+    resize: none;
   }
 </style>

@@ -26,7 +26,6 @@ module.exports = app => {
             const errors = req.validationErrors()
             
             if (errors) {
-                console.log('Errors: ', errors)
                 return res.status(400).json({success: false, type: 'danger', msg: errors, data: new Date(), title:'Status do Requisição'})
             } else if (!Number.isInteger(parseInt(req.body.connect_id))) {
                 return res.status(400).json({success: false, type: 'danger', msg: 'connect_id invalid!', data: new Date(), title:'Status do Requisição'})

@@ -1,10 +1,10 @@
 {
-  "name": "@coreui/vue",
-  "version": "1.0.6",
-  "description": "Open Source Bootstrap Admin Template",
-  "author": "Łukasz Holeczek",
-  "homepage": "http://coreui.io",
-  "copyright": "Copyright 2017 creativeLabs Łukasz Holeczek",
+  "name": "eReports",
+  "version": "0.0.1",
+  "description": "Open Source eReports Template",
+  "author": "Michel Ferreira Souza",
+  "homepage": "",
+  "copyright": "Copyright 2017 eReports",
   "license": "MIT",
   "private": true,
   "scripts": {

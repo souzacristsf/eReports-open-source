@@ -65,7 +65,6 @@ export default {
     }
   },
   mounted () {
-    console.log('Me chamou')
   }
 }
 </script>

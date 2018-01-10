@@ -1,8 +1,8 @@
 const hbs = require('handlebars')
 
-hbs.registerHelper('moduloIf', function (index_count, mod, block) {
-    if (parseInt(index_count) % (mod) === 0) {
-        return block.fn(this)
+hbs.registerHelper('ifValue', function (value, options) {
+    if(value != 'COLOR' || value == ''){
+        return options.fn(this);
     }
 })
 
@@ -78,20 +78,24 @@ th {
     <p style="font-size: 12px;" >Produto Casdatro por valor.</p>
         <table class="table table-striped" style="background-color: #994d33;">
         <thead>
-            <tr style="background-color: #994d33; text-align:center;">
-                <th>Codigo</th>
-                <th>Nome</th>
-                <th>Valor</th>
-            </tr>
+        <tr style="background-color: #994d33; text-align:center;">
+            {{#each columns}}
+                {{#ifValue name}}
+                    <th>{{name}}</th>
+                {{/ifValue}}
+            {{/each}}
+        </tr>
         </thead>
         <tbody>           
-            {{#products}} 
-                <tr style="background-color: {{COLOR}};">
-                    <td>{{PRODUCT_ID}}</td>
-                    <td>{{NAME}}</td>
-                    <td>{{VALUE}}</td>
+            {{#each data}} 
+                <tr style="background-color: {{COLOR}}">
+                    {{#each this}}
+                        {{#ifValue @key}}
+                            <td>{{this}}</td>
+                        {{/ifValue}}
+                    {{/each}}
                 </tr>           
-            {{/products}}
+            {{/each}}
         </tbody>
         </table>
     </br>

@@ -38,6 +38,8 @@ module.exports = app => {
         endDate: {type: Date},
         startTime: {type: String},
         endTime: {type: String},
+        sTime: {type: Number},
+        eTime: {type: Number},
         email: email,
         database: database,
         query: query,

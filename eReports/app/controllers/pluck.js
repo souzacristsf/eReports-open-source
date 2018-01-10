@@ -4,4 +4,4 @@ const pluck = (object, ...keys) => {
     return newObject;
 };  
 
-module.exports = pluck
+module.exports = app => pluck

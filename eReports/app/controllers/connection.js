@@ -19,20 +19,17 @@ const testConnection = (config, res) => {
         }
       )
       .then(function(result) {
-        console.log('Data: ', result.rows[0].DATA)
         res.status(201).json({success: true, type: 'success', msg: 'Conexão Efetuada com sucesso!!! :)', data: result.rows[0].DATA, title:'Status da Conexão'})
 
         return connection.close();
       })
       .catch(function(err) {
-          console.log('Meu Erro 1: ', err)        
           res.status(503).json({success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message, title:'Status da Conexão'})
 
         return connection.close();
       });
     })
     .catch(function(err) {
-        console.log('Meu Erro: ', err)
         res.status(503).send({ success: false, type: 'danger', msg: 'Conexão Falhou!!! :(', data: err.message, title:'Status da Conexão'})
     });
 }
@@ -45,15 +42,14 @@ module.exports = app => {
 
     return {
         testConnect: (req, res) => {
-            const fields = pluck(req.body, 'user', 'password', 'connectString')
+            const fields = pluck(app)(req.body, 'user', 'password', 'connectString')
             testConnection(fields, res);
         },
 
         create: (req, res) => {
             const connection = new Connection()
-            const fields = pluck(req.body, 'driver', 'user', 'password', 'nameConect', 'connectString', 'descrConect')
+            const fields = pluck(app)(req.body, 'driver', 'user', 'password', 'nameConect', 'connectString', 'descrConect')
 
-            console.log(fields)
             Object.assign(connection, fields)
 
             Help.create(connection, res)
@@ -72,7 +68,7 @@ module.exports = app => {
             const query = {
                 connect_id: parseInt(req.params.connect_id)
             }
-            const fields = pluck(req.body, 'driver', 'user', 'nameConect', 'connectString', 'descrConect')
+            const fields = pluck(app)(req.body, 'driver', 'user', 'nameConect', 'connectString', 'descrConect')
             
             Connection.find(query).then(
                 data => {

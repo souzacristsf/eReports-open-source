@@ -156,7 +156,6 @@ export default {
   watch: {
     form: {
       handler () {
-        console.log('Entrou no watch')
         this.btnSave = true
         this.disTabResult = true
       },
@@ -204,7 +203,6 @@ export default {
     execQuery () {
       const query = _.merge({}, this.pick(this.form.database, 'connect_id'), this.pick(this.form, ['name', 'query']))
       doRunQuery(query).then(({data}) => {
-        console.log('Aqui passa o erro: ', data)
         this.disTabResult = false
         this.btnSave = false
         this.fields = _.keys(data.data[0]).map((value) => ({ key: value, name: '', sortable: true }))

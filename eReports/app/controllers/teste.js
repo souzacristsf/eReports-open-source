@@ -18,8 +18,7 @@ module.exports = app => config => {
           const resultados = result.rows;
 
           connection.close();
-          
-          console.log(resultados)        
+            
           return resultados;
 
         });    

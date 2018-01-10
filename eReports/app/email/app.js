@@ -41,8 +41,6 @@ module.exports = (Connection) => {
             return connection.close()
         })
             .catch(function (err) {
-                console.log('Estourou bem aqui o erro')
-                console.log(err.message)
                 return connection.close()
             })
     }

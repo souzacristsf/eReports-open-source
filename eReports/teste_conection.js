@@ -22,7 +22,6 @@ module.exports = (Connection) =>
                     if (err) { console.error('err: ', err); connection.close(); return }
 
                     const resultados = result.rows
-                    console.log(resultados)
 
                     connection.close()
                     // connectionClose(connection);

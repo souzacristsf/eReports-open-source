@@ -7,7 +7,7 @@ module.exports = app => {
         create: (req, res) => {
             const email = new Email()
 
-            const fields = pluck(req.body, 'to', 'from', 'password', 'service')
+            const fields = pluck(app)(req.body, 'to', 'from', 'password', 'service')
 
             Object.assign(email, fields)
 
@@ -45,12 +45,12 @@ module.exports = app => {
             const config = {
                 to: req.body.to,
                 user: req.body.from,
-                remetente: req.body.from,
+                from: req.body.from,
                 assunto: 'eReports e-mail de teste :)',
-                pass: req.body.password
+                password: req.body.password
             }
 
-            require(`../email/${service}`)(config, res, 'teste')
+            require(`../email/${service}`)(config, res, 'teste', '')
         }
     }
 }

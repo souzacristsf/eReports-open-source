@@ -43,13 +43,11 @@ export default {
             _.filter(data, { status: 'Active' }).map(item => ({value: item, text: item.nameConect}))
         )
         .then(data => {
-          console.log('Connections: ', data)
           this.connections = data
         })
         .catch(this.sendMsgModal)
     },
     sendMsgModal (value) {
-      console.log('Resposta: ', value.response)
       this.showModal(true)
       if (value.response) {
         this.info = { ...value.response.data }

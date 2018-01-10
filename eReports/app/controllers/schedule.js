@@ -8,7 +8,7 @@ module.exports = app => {
             create: (req, res) => {
                 const schedule = new Schedule()
     
-                const fields = pluck(req.body, 'allDay', 'status', 'startDate', 'endDate', 'startTime', 'endTime', 'email', 'database', 'query')
+                const fields = pluck(app)(req.body, 'allDay', 'status', 'startDate', 'endDate', 'startTime', 'endTime', 'eTime', 'sTime', 'email', 'database', 'query')
 
                 Object.assign(schedule, fields)
                 

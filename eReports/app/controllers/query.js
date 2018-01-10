@@ -10,8 +10,7 @@ module.exports = app => {
         create: (req, res) => {
             const query = new Query()
 
-            console.log(req.body)
-            const fields = pluck(req.body, 'name', 'query', 'columns', 'database')
+            const fields = pluck(app)(req.body, 'name', 'query', 'columns', 'database')
             
             Object.assign(query, fields)
             
@@ -53,7 +52,7 @@ module.exports = app => {
             const myQuery = {
                 query_id: parseInt(req.params.query_id)
             }
-            const fields = pluck(req.body, 'name', 'query', 'connect_id')
+            const fields = pluck(app)(req.body, 'name', 'query', 'connect_id')
 
             const mod = fields
             mod.$unset = { deleted_at: 1 }

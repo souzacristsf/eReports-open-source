@@ -1,5 +1,13 @@
 version: "3"
 services:
+    principal:
+        build: ./app/frontend
+        image: application
+        container_name: appweb
+        restart: always
+        ports:
+            - 80:80
+            - 443:443
     eReports:
         build: ./oracle-client
         image: oracle-client
