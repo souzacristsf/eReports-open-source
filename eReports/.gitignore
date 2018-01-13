@@ -66,6 +66,6 @@ typings/
 package-lock.json
 
 # Codigo depreciado
-./app/email
+email/
 
 # End of https://www.gitignore.io/api/node
