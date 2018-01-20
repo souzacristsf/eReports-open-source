@@ -1,9 +1,9 @@
-import { HTTP } from '@/http'
+import { http } from '@/plugins/http'
 
 export const doSaveEmail = (data) => {
-  return HTTP.post('api/v1/email/new', data)
+  return http.post('api/v1/email/new', data)
 }
 
 export const doSendEmailTest = (data) => {
-  return HTTP.post('api/v1/email/test', data)
+  return http.post('api/v1/email/test', data)
 }

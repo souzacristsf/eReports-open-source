@@ -1,15 +1,15 @@
 import * as TYPES from './mutations-types'
-import localforage from 'localforage'
 import { doLogin } from '../services'
-import Auth from '@/auth'
+import { setInitToken } from '@/plugins/http'
+import { setUser as setuser, getToken, logout as logoff, getUser } from '@/auth'
 
 export const attemptLogin = ({ dispatch }, payload) => {
-  return doLogin(payload).then(
-    (response) => {
-      dispatch('setUser', response.data.user)
-      dispatch('setToken', response.data.token)
-      Auth.setUser(response.data)
-    })
+  return doLogin(payload).then(response => {
+    dispatch('setUser', response.user)
+    dispatch('setToken', response.token)
+    setInitToken(response.token)
+    setuser(response)
+  })
 }
 
 export const logout = ({ dispatch }) => {
@@ -17,14 +17,14 @@ export const logout = ({ dispatch }) => {
   return Promise.all([
     dispatch('setToken', null),
     dispatch('setUser', {}),
-    Auth.logout()
+    logoff()
   ])
   // commit(TYPES.SETLOGIN, login)
 }
 
 export const setToken = ({ commit }, payload) => {
   // prevent if payload is a object
-  const token = (!payload) ? null : payload.token || payload
+  const token = !payload ? null : payload.token || payload
 
   // Commit the mutations
   commit(TYPES.setToken, token)
@@ -50,15 +50,32 @@ export const checkUserToken = ({ dispatch, state }) => {
    * - Recover it from localstorage
    * - Recover also the user, validating the token also
    */
-  return localforage.getItem('token')
-    .then((token) => {
-      if (!token) {
-        // Token is not saved in localstorage
-        return Promise.reject(new Error('NO_TOKEN')) // Reject promise
-      }
-      // Put the token in the vuex store
-      return dispatch('setToken', token) // keep promise chain
-    })
-  // With the token in hand, retrieves the user's data, validating the token
-    .then(() => dispatch('loadUser'))
+  return (
+    getToken()
+      .then(token => {
+        if (!token) {
+          // Token is not saved in localstorage
+          return Promise.reject(new Error('NO_TOKEN')) // Reject promise
+        }
+        // Put the token in the vuex store
+        return dispatch('setToken', token) // keep promise chain
+      })
+      // With the token in hand, retrieves the user's data, validating the token
+      .then(() => dispatch('loadUser'))
+  )
+}
+
+export const loadUser = async ({ dispatch }) => {
+  try {
+    const { email, fullname, username } = await getUser()
+    dispatch('setUser', { email, fullname, username })
+  } catch (error) {
+    // Process failure, delete the token
+    dispatch('setToken', '')
+    return Promise.reject(new Error('FAIL_IN_LOAD_USER')) // keep promise chain
+  }
+  // // loadUserData(userId)
+  //   .then(user => dispatch('setUser', user.data))
+  //   .catch(() => {
+  //   })
 }

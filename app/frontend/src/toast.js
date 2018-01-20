@@ -11,12 +11,12 @@ const options = {
   // fitToScreen: true
 }
 
-export const success = (msg) => {
+export const success = msg => {
   options.type = 'success'
   return Vue.toasted.show(msg, options)
 }
 
-export const error = (msg) => {
+export const error = msg => {
   options.type = 'error'
   return Vue.toasted.show(msg, options)
 }

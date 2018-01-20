@@ -26,11 +26,12 @@ app.use(express.static(path.join(__dirname, './public')))
 
 app.use('/public', express.static(path.join(__dirname, './public'))) // adicionei essa linha aqu
 
-app.jwt = require('./app/config/jwt-config')(app)
-// DESCOMENTE A LINHA ABAIXO, PARA ATIVAR A AUTENTICACAO.
-// app.use('/api', app.jwt);
-
+app.jwt = require('./app/config/jwt-config')(app).validate
 // console.log('app.jwt:', app.jwt)
+
+// DESCOMENTE A LINHA ABAIXO, PARA ATIVAR A AUTENTICACAO.
+app.use('/api', app.jwt)
+
 const run = require('./app/schedule/run')
 let rule = new schedule.RecurrenceRule()
 rule.minute = new schedule.Range(0, 59, 1)

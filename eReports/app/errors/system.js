@@ -15,6 +15,10 @@ module.exports = ({
         authenticate: {
             title: 'Error',
             message: 'Error: Authentication not found'
+        },
+        malFormatted: {
+            title: 'Error',
+            message: 'Error: Token malformatted'
         }
     }
 })

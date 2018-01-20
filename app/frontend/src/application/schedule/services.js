@@ -1,13 +1,13 @@
-import { HTTP } from '@/http'
+import { http } from '@/plugins/http'
 
 export const doListEmail = (data) => {
-  return HTTP.get('api/v1/email', data)
+  return http.get('api/v1/email', data)
 }
 
 export const doListQuery = (data) => {
-  return HTTP.get('api/v1/query', data)
+  return http.get('api/v1/query', data)
 }
 
 export const doCreateSchedule = (data) => {
-  return HTTP.post('api/v1/schedule/new', data)
+  return http.post('api/v1/schedule/new', data)
 }

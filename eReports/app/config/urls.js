@@ -11,5 +11,5 @@ module.exports = app = ({
         stmtCacheSize: 40,
         externalAuth: !!process.env.NODE_ORACLEDB_EXTERNALAUTH
     },
-    token: '1a5H(qzO&1+!8M35tXvai3A*JF%Os]eOoG63/Oo+:1S(R[%x[js09UKDam0#85'
+    token: '1a5H(qzO&1+!8M35tX##vai#3A*@$%JF%Os]eOoG63/Oo+:1S(R[%x[js09UKDam0#85'
 })

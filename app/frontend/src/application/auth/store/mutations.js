@@ -5,6 +5,7 @@ export default {
     state.token = value
   },
   [TYPES.setUser] (state, value) {
-    state.user = value
+    const { username, email, fullname } = { ...value }
+    state.user = { username, email, fullname }
   }
 }
